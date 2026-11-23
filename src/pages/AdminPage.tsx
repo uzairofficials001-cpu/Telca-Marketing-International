@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { MEDIA_ASSETS, resolveMediaUrl } from '../utils/mediaAssets';
 import { 
   ShieldAlert, 
   LayoutDashboard, 
@@ -302,7 +303,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigateHome, onOpenAuth
     strategy: '',
     measurableResult: '',
     summary: '',
-    image: '/src/assets/images/portfolio_growth_case_study_1793433686566.jpg',
+    image: '/images/portfolio_growth_case_study_1793433686566.jpg',
     servicesProvidedText: '',
     keyOutputsText: '',
     isConceptWork: true,
@@ -337,7 +338,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigateHome, onOpenAuth
     keywords: '',
     ogTitle: '',
     ogDescription: '',
-    ogImage: '/src/assets/images/hero_marketing_growth_1793368523521.jpg',
+    ogImage: '/images/hero_marketing_growth_1793368523521.jpg',
     canonicalUrl: 'https://telcamarketing.com/',
     robots: 'index, follow',
     structuredDataType: 'WebPage',
@@ -948,7 +949,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigateHome, onOpenAuth
       strategy: '',
       measurableResult: '',
       summary: '',
-      image: '/src/assets/images/portfolio_growth_case_study_1793433686566.jpg',
+      image: '/images/portfolio_growth_case_study_1793433686566.jpg',
       servicesProvidedText: '',
       keyOutputsText: '',
       isConceptWork: true,
@@ -968,7 +969,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigateHome, onOpenAuth
       strategy: cs.strategy || '',
       measurableResult: cs.measurableResult || '',
       summary: cs.summary || '',
-      image: cs.image || '/src/assets/images/portfolio_growth_case_study_1793433686566.jpg',
+      image: cs.image || '/images/portfolio_growth_case_study_1793433686566.jpg',
       servicesProvidedText: Array.isArray(cs.servicesProvided) ? cs.servicesProvided.join('\n') : '',
       keyOutputsText: Array.isArray(cs.keyOutputs) ? cs.keyOutputs.join('\n') : '',
       isConceptWork: cs.isConceptWork !== false,
@@ -991,7 +992,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigateHome, onOpenAuth
       strategy: caseStudyForm.strategy.trim(),
       measurableResult: caseStudyForm.measurableResult.trim(),
       summary: caseStudyForm.summary.trim(),
-      image: caseStudyForm.image.trim() || '/src/assets/images/portfolio_growth_case_study_1793433686566.jpg',
+      image: caseStudyForm.image.trim() || '/images/portfolio_growth_case_study_1793433686566.jpg',
       servicesProvided: caseStudyForm.servicesProvidedText.split('\n').map(s => s.trim()).filter(Boolean),
       keyOutputs: caseStudyForm.keyOutputsText.split('\n').map(s => s.trim()).filter(Boolean),
       isConceptWork: caseStudyForm.isConceptWork,
@@ -1178,7 +1179,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigateHome, onOpenAuth
       keywords: '',
       ogTitle: '',
       ogDescription: '',
-      ogImage: '/src/assets/images/hero_marketing_growth_1793368523521.jpg',
+      ogImage: '/images/hero_marketing_growth_1793368523521.jpg',
       canonicalUrl: 'https://telcamarketing.com/',
       robots: 'index, follow',
       structuredDataType: 'WebPage',
@@ -1197,7 +1198,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigateHome, onOpenAuth
       keywords: item.keywords || '',
       ogTitle: item.ogTitle || item.metaTitle || '',
       ogDescription: item.ogDescription || item.metaDescription || '',
-      ogImage: item.ogImage || '/src/assets/images/hero_marketing_growth_1793368523521.jpg',
+      ogImage: item.ogImage || '/images/hero_marketing_growth_1793368523521.jpg',
       canonicalUrl: item.canonicalUrl || `https://telcamarketing.com${item.routeSlug || '/'}`,
       robots: item.robots || 'index, follow',
       structuredDataType: item.structuredDataType || 'WebPage',
@@ -2407,11 +2408,11 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigateHome, onOpenAuth
           >
             <div className="bg-white px-2.5 py-1.5 rounded-xl shadow-sm flex items-center justify-center shrink-0">
               <img
-                src="/assets/aistudio/telca_logo_trimmed.png"
+                src={MEDIA_ASSETS.telcaLogoTrimmed}
                 alt="TELCA MARKETING"
                 className="h-6 sm:h-7 w-auto object-contain"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = '/assets/aistudio/telca_logo__fadbada3.png';
+                  (e.target as HTMLImageElement).src = MEDIA_ASSETS.telcaLogoFallback;
                 }}
               />
             </div>
@@ -5145,7 +5146,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigateHome, onOpenAuth
                       shortDescription: '',
                       heroHeadline: '',
                       heroSubheadline: '',
-                      image: '/src/assets/images/service_performance_ads_1793368524817.jpg',
+                      image: '/images/service_performance_ads_1793368524817.jpg',
                       isPublished: true
                     });
                   }}
@@ -5162,7 +5163,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigateHome, onOpenAuth
                     <div className="flex items-start gap-4 max-w-2xl">
                       {svc.image && (
                         <img
-                          src={svc.image}
+                          src={resolveMediaUrl(svc.image, MEDIA_ASSETS.servicePerformanceAds)}
                           alt={svc.title}
                           className="w-16 h-16 rounded-xl object-cover border border-slate-200 shrink-0 hidden sm:block"
                         />
@@ -5527,7 +5528,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigateHome, onOpenAuth
                   <div key={m.id} className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col">
                     <div className="h-44 bg-slate-900 relative">
                       <img
-                        src={m.url}
+                        src={resolveMediaUrl(m.url)}
                         alt={m.altText}
                         className="w-full h-full object-cover"
                         referrerPolicy="no-referrer"
@@ -5667,7 +5668,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigateHome, onOpenAuth
                             required={mediaUploadMode === 'url'}
                             value={newMediaForm.url}
                             onChange={(e) => setNewMediaForm({ ...newMediaForm, url: e.target.value })}
-                            placeholder="/src/assets/images/... or https://..."
+                            placeholder="/images/... or https://..."
                             className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl font-mono text-xs"
                           />
                         </div>
@@ -5821,7 +5822,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigateHome, onOpenAuth
                       <div>
                         <div className="h-44 bg-slate-100 relative overflow-hidden">
                           <img
-                            src={cs.image || '/src/assets/images/portfolio_growth_case_study_1793433686566.jpg'}
+                            src={resolveMediaUrl(cs.image, MEDIA_ASSETS.portfolioGrowthCaseStudy)}
                             alt={cs.title}
                             className="w-full h-full object-cover"
                             referrerPolicy="no-referrer"

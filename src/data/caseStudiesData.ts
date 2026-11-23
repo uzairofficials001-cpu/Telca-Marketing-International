@@ -18,7 +18,7 @@ export const caseStudiesData: CaseStudy[] = [
     measurableResult: 'Established a disciplined CPA testing benchmark across 6 primary creative hooks with multi-touch attribution.',
     summary: 'A structured international performance framework testing localized ad copy, dynamic product feeds, and retargeting cadence.',
     isConceptWork: true,
-    image: '/src/assets/images/portfolio_growth_case_study_1793433686566.jpg',
+    image: '/images/portfolio_growth_case_study_1793433686566.jpg',
     keyOutputs: [
       '12 localized ad angle variants tested',
       'First-party pixel and GA4 event tracking setup',
@@ -42,7 +42,7 @@ export const caseStudiesData: CaseStudy[] = [
     measurableResult: 'Unified visual standard across 40+ sales and client presentation assets deployed across international divisions.',
     summary: 'Complete brand collateral modernization aligning executive documents with top-tier international consulting standards.',
     isConceptWork: true,
-    image: '/src/assets/images/service_creative_production_1793368525972.jpg',
+    image: '/images/service_creative_production_1793368525972.jpg',
     keyOutputs: [
       'Modular 30-slide pitch system in Figma and PowerPoint',
       'Executive whitepaper and case study editorial templates',
@@ -66,7 +66,7 @@ export const caseStudiesData: CaseStudy[] = [
     measurableResult: 'Delivered 8 distinct video cut-downs formatted in 9:16 vertical and 1:1 square for immediate multi-platform testing.',
     summary: 'Direct-response motion editing engineered specifically to capture attention and communicate product features within 15 seconds.',
     isConceptWork: true,
-    image: '/src/assets/images/service_creative_production_1793368525972.jpg',
+    image: '/images/service_creative_production_1793368525972.jpg',
     keyOutputs: [
       '8 edited commercial short cuts in 4K resolution',
       'Dynamic caption styles with high mobile readability',
@@ -90,7 +90,7 @@ export const caseStudiesData: CaseStudy[] = [
     measurableResult: 'Maintained a reliable 3-post weekly cadence with 100% on-time approvals and timely response to prospective partner inquiries.',
     summary: 'A disciplined corporate LinkedIn roadmap establishing consistent industry visibility across London, New York, and Dubai.',
     isConceptWork: true,
-    image: '/src/assets/images/service_social_media_1793433660938.jpg',
+    image: '/images/service_social_media_1793433660938.jpg',
     keyOutputs: [
       '12 monthly branded educational carousels',
       'Streamlined 30-day advance content approval workflow',
@@ -114,7 +114,7 @@ export const caseStudiesData: CaseStudy[] = [
     measurableResult: 'Engineered an automated 30-day subscriber nurture journey with verified SPF, DKIM, and DMARC technical alignment.',
     summary: 'A sophisticated email architecture that treats inboxes with respect through thoughtful typography and intentional cadence.',
     isConceptWork: true,
-    image: '/src/assets/images/service_email_marketing_1793433673325.jpg',
+    image: '/images/service_email_marketing_1793433673325.jpg',
     keyOutputs: [
       'Custom mobile-responsive HTML email template system',
       'Automated Welcome, Browse Abandonment, and VIP flows',
@@ -138,7 +138,7 @@ export const caseStudiesData: CaseStudy[] = [
     measurableResult: 'Reduced lead response and routing latency from 24 hours down to under 60 seconds with zero manual data entry errors.',
     summary: 'An autonomous operations backbone connecting ad forms, HubSpot CRM, Slack, and automated calendar invitations.',
     isConceptWork: true,
-    image: '/src/assets/images/service_ai_automation_1793368525649.jpg',
+    image: '/images/service_ai_automation_1793368525649.jpg',
     keyOutputs: [
       'Self-hosted n8n workflow with custom webhook endpoints',
       'Real-time Slack notification alerts for urgent high-budget inquiries',

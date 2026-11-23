@@ -8,6 +8,7 @@ import { AnimatedSection, StaggerContainer, StaggerItem } from '../components/An
 import { CoreSpecializationsSection } from '../components/CoreSpecializationsSection';
 import { IndustrySolutionsSection } from '../components/IndustrySolutionsSection';
 import { PerformanceDataLineMotion, ConversionFunnelMotion, WorkflowConnectedNodesMotion } from '../components/MotionGraphics';
+import { MEDIA_ASSETS, resolveMediaUrl } from '../utils/mediaAssets';
 import { 
   ArrowRight, 
   ArrowUpRight, 
@@ -147,7 +148,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             >
               <div className="relative rounded-2xl overflow-hidden border border-slate-200/80 shadow-xl bg-white">
                 <img
-                  src="/src/assets/images/hero_marketing_growth_1793368523521.jpg"
+                  src={MEDIA_ASSETS.heroMarketingGrowth}
                   alt="Telca Marketing international growth command center"
                   className="w-full h-80 sm:h-96 object-cover"
                   referrerPolicy="no-referrer"
@@ -637,7 +638,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   {/* Visual */}
                   <div className="relative h-48 bg-slate-100 overflow-hidden">
                     <img
-                      src={study.image}
+                      src={resolveMediaUrl(study.image)}
                       alt={study.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       referrerPolicy="no-referrer"

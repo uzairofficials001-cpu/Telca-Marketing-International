@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { UserProfileModal } from './UserProfileModal';
 import { PWAInstallButton } from './PWAInstallButton';
+import { MEDIA_ASSETS } from '../utils/mediaAssets';
 
 interface NavbarProps {
   currentPage: PageId;
@@ -113,11 +114,11 @@ export const Navbar: React.FC<NavbarProps> = ({
               aria-label="Telca Marketing Home"
             >
               <img 
-                src="/assets/aistudio/telca_logo_transparent.png" 
+                src={MEDIA_ASSETS.telcaLogoTransparent} 
                 alt="TELCA MARKETING" 
                 className="h-9 sm:h-10 xl:h-11 w-auto max-w-[145px] sm:max-w-[170px] xl:max-w-[190px] object-contain shrink-0 transition-opacity hover:opacity-90"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = '/assets/aistudio/telca_logo__fadbada3.png';
+                  (e.target as HTMLImageElement).src = MEDIA_ASSETS.telcaLogoFallback;
                 }}
               />
             </button>

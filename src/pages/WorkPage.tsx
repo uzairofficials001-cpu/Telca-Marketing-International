@@ -4,6 +4,7 @@ import { caseStudiesData } from '../data/caseStudiesData';
 import { AnimatedSection, StaggerContainer, StaggerItem } from '../components/AnimatedSection';
 import { ArrowRight, Check, X, ShieldAlert } from 'lucide-react';
 import { trackContentView } from '../utils/analytics';
+import { resolveMediaUrl } from '../utils/mediaAssets';
 
 interface WorkPageProps {
   onNavigate: (page: PageId) => void;
@@ -126,7 +127,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({
                   {/* Visual */}
                   <div className="relative h-52 bg-slate-100 overflow-hidden">
                     <img
-                      src={project.image}
+                      src={resolveMediaUrl(project.image)}
                       alt={project.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       referrerPolicy="no-referrer"
@@ -214,7 +215,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({
           >
             <div className="relative h-48 sm:h-56 bg-slate-100">
               <img
-                src={activeModalStudy.image}
+                src={resolveMediaUrl(activeModalStudy.image)}
                 alt={activeModalStudy.title}
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

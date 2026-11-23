@@ -1,6 +1,7 @@
 import React from 'react';
 import { PageId } from '../types';
 import { ArrowUpRight, Globe, Shield, Clock } from 'lucide-react';
+import { MEDIA_ASSETS } from '../utils/mediaAssets';
 
 interface FooterProps {
   onNavigate: (page: PageId) => void;
@@ -43,11 +44,11 @@ export const Footer: React.FC<FooterProps> = ({
           <div className="lg:col-span-2 space-y-4">
             <div className="inline-block p-2 bg-white rounded-xl shadow-md">
               <img 
-                src="/assets/aistudio/telca_logo_trimmed.png" 
+                src={MEDIA_ASSETS.telcaLogoTrimmed} 
                 alt="TELCA MARKETING" 
                 className="h-8 sm:h-9 w-auto object-contain"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = '/assets/aistudio/telca_logo__fadbada3.png';
+                  (e.target as HTMLImageElement).src = MEDIA_ASSETS.telcaLogoFallback;
                 }}
               />
             </div>

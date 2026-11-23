@@ -5,6 +5,7 @@ import { PageId } from '../types';
 import { servicesData } from '../data/servicesData';
 import { AllServicesDirectorySection } from '../components/AllServicesDirectorySection';
 import { AnimatedSection } from '../components/AnimatedSection';
+import { MEDIA_ASSETS, resolveMediaUrl } from '../utils/mediaAssets';
 
 interface AllServicesPageProps {
   onNavigate: (page: PageId) => void;
@@ -134,7 +135,7 @@ export const AllServicesPage: React.FC<AllServicesPageProps> = ({
               <div>
                 <div className="relative h-44 bg-[#101B35] overflow-hidden">
                   <img
-                    src={area.image}
+                    src={resolveMediaUrl(area.image, MEDIA_ASSETS.servicePerformanceAds)}
                     alt={area.title}
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"

@@ -9,7 +9,7 @@ export const servicesData: Record<string, ServiceDetail> = {
     badge: 'Performance Advertising',
     heroHeadline: 'Strategic Digital Advertising Engineered For Measurable Returns.',
     heroSubheadline: 'We design, launch, monitor and optimize targeted multi-channel ad campaigns that connect your brand with high-intent buyers across global markets.',
-    image: '/src/assets/images/service_performance_ads_1793368524817.jpg',
+    image: '/images/service_performance_ads_1793368524817.jpg',
     problemsSolved: [
       {
         problem: 'Ad Spend Without Predictable Returns',
@@ -195,7 +195,7 @@ export const servicesData: Record<string, ServiceDetail> = {
     badge: 'Creative Production',
     heroHeadline: 'Strategic Creative That Stops The Scroll And Communicates Value.',
     heroSubheadline: 'We produce high-impact ad creatives, brand graphics, and short-form video assets engineered to perform across paid and organic digital channels.',
-    image: '/src/assets/images/service_creative_production_1793368525972.jpg',
+    image: '/images/service_creative_production_1793368525972.jpg',
     problemsSolved: [
       {
         problem: 'Creative Fatigue & Ad Burnout',
@@ -332,7 +332,7 @@ export const servicesData: Record<string, ServiceDetail> = {
     badge: 'Organic Social Growth',
     heroHeadline: 'Consistent, Authoritative Social Presence That Builds Real Brand Equity.',
     heroSubheadline: 'We craft authentic organic content, manage publishing schedules, and engage your community so your brand stays top-of-mind across major global platforms.',
-    image: '/src/assets/images/service_social_media_1793433660938.jpg',
+    image: '/images/service_social_media_1793433660938.jpg',
     problemsSolved: [
       {
         problem: 'Inconsistent Posting & Ghost Town Profiles',
@@ -480,7 +480,7 @@ export const servicesData: Record<string, ServiceDetail> = {
     badge: 'Email & Retention',
     heroHeadline: 'Direct Customer Communication That Nurtures Relationships And Drives Inquiries.',
     heroSubheadline: 'We build automated email sequences, beautiful newsletters, and targeted campaigns that engage subscribers and maximize customer lifetime value.',
-    image: '/src/assets/images/service_email_marketing_1793433673325.jpg',
+    image: '/images/service_email_marketing_1793433673325.jpg',
     problemsSolved: [
       {
         problem: 'Unused Email Lists Collecting Dust',
@@ -620,7 +620,7 @@ export const servicesData: Record<string, ServiceDetail> = {
     badge: 'Intelligent Systems',
     heroHeadline: 'Automate Repetitive Workflows And Connect Your Core Business Tools.',
     heroSubheadline: 'We build intelligent automations, smart CRM pipelines, and automated follow-up workflows so your team can focus on closing deals and serving clients.',
-    image: '/src/assets/images/service_ai_automation_1793368525649.jpg',
+    image: '/images/service_ai_automation_1793368525649.jpg',
     problemsSolved: [
       {
         problem: 'Manual Copy-Pasting Across Disconnected Tools',

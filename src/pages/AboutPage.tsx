@@ -2,6 +2,7 @@ import React from 'react';
 import { PageId } from '../types';
 import { AnimatedSection, StaggerContainer, StaggerItem } from '../components/AnimatedSection';
 import { ArrowRight, Globe, Lightbulb, Compass, Workflow } from 'lucide-react';
+import { MEDIA_ASSETS } from '../utils/mediaAssets';
 
 interface AboutPageProps {
   onNavigate: (page: PageId) => void;
@@ -74,7 +75,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             <div className="lg:col-span-5">
               <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white">
                 <img
-                  src="/src/assets/images/about_agency_strategy_1793433704801.jpg"
+                  src={MEDIA_ASSETS.aboutAgencyStrategy}
                   alt="Telca Marketing agency strategists collaborating"
                   className="w-full h-80 sm:h-96 object-cover"
                   referrerPolicy="no-referrer"

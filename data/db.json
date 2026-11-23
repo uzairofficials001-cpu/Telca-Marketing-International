@@ -520,7 +520,7 @@
       "badge": "Performance Advertising",
       "heroHeadline": "Strategic Digital Advertising Engineered For Measurable Returns.",
       "heroSubheadline": "We design, launch, monitor and optimize targeted multi-channel ad campaigns that connect your brand with high-intent buyers across global markets.",
-      "image": "/src/assets/images/service_performance_ads_1793368524817.jpg",
+      "image": "/images/service_performance_ads_1793368524817.jpg",
       "problemsSolved": [
         {
           "problem": "Ad Spend Without Predictable Returns",
@@ -705,7 +705,7 @@
       "badge": "Creative Production",
       "heroHeadline": "Strategic Creative That Stops The Scroll And Communicates Value.",
       "heroSubheadline": "We produce high-impact ad creatives, brand graphics, and short-form video assets engineered to perform across paid and organic digital channels.",
-      "image": "/src/assets/images/service_creative_production_1793368525972.jpg",
+      "image": "/images/service_creative_production_1793368525972.jpg",
       "problemsSolved": [
         {
           "problem": "Creative Fatigue & Ad Burnout",
@@ -857,7 +857,7 @@
       "badge": "Organic Social Growth",
       "heroHeadline": "Consistent, Authoritative Social Presence That Builds Real Brand Equity.",
       "heroSubheadline": "We craft authentic organic content, manage publishing schedules, and engage your community so your brand stays top-of-mind across major global platforms.",
-      "image": "/src/assets/images/hero_marketing_growth_1793368523521.jpg",
+      "image": "/images/hero_marketing_growth_1793368523521.jpg",
       "problemsSolved": [
         {
           "problem": "Inconsistent Posting & Ghost Town Profiles",
@@ -1020,7 +1020,7 @@
       "badge": "Email & Retention",
       "heroHeadline": "Direct Customer Communication That Nurtures Relationships And Drives Inquiries.",
       "heroSubheadline": "We build automated email sequences, beautiful newsletters, and targeted campaigns that engage subscribers and maximize customer lifetime value.",
-      "image": "/src/assets/images/service_performance_ads_1793368524817.jpg",
+      "image": "/images/service_performance_ads_1793368524817.jpg",
       "problemsSolved": [
         {
           "problem": "Unused Email Lists Collecting Dust",
@@ -1175,7 +1175,7 @@
       "badge": "Intelligent Systems",
       "heroHeadline": "Automate Repetitive Workflows And Connect Your Core Business Tools.",
       "heroSubheadline": "We build intelligent automations, smart CRM pipelines, and automated follow-up workflows so your team can focus on closing deals and serving clients.",
-      "image": "/src/assets/images/service_ai_automation_1793368525649.jpg",
+      "image": "/images/service_ai_automation_1793368525649.jpg",
       "problemsSolved": [
         {
           "problem": "Manual Copy-Pasting Across Disconnected Tools",
@@ -1889,7 +1889,7 @@
     {
       "id": "media_1",
       "name": "Paid Advertising Command Center",
-      "url": "/src/assets/images/service_performance_ads_1793368524817.jpg",
+      "url": "/images/service_performance_ads_1793368524817.jpg",
       "category": "service",
       "altText": "Telca Marketing paid media performance analytics dashboard and campaign management interface",
       "dimensions": "1920x1080",
@@ -1903,7 +1903,7 @@
     {
       "id": "media_2",
       "name": "Creative & Content Production Studio",
-      "url": "/src/assets/images/service_creative_production_1793368525972.jpg",
+      "url": "/images/service_creative_production_1793368525972.jpg",
       "category": "service",
       "altText": "Video editing, motion graphics, and graphic design workspace for direct-response marketing",
       "dimensions": "1920x1080",
@@ -1917,7 +1917,7 @@
     {
       "id": "media_3",
       "name": "Social Media Management Workspace",
-      "url": "/src/assets/images/service_social_media_1793433660938.jpg",
+      "url": "/images/service_social_media_1793433660938.jpg",
       "category": "service",
       "altText": "Multi-channel social editorial calendar and community engagement management dashboard",
       "dimensions": "1920x1080",
@@ -1931,7 +1931,7 @@
     {
       "id": "media_4",
       "name": "Email Marketing & Retention Canvas",
-      "url": "/src/assets/images/service_email_marketing_1793433673325.jpg",
+      "url": "/images/service_email_marketing_1793433673325.jpg",
       "category": "service",
       "altText": "Automated email sequence workflow builder, newsletter design, and deliverability analytics",
       "dimensions": "1920x1080",
@@ -1945,7 +1945,7 @@
     {
       "id": "media_5",
       "name": "AI & Business Automation Pipeline",
-      "url": "/src/assets/images/service_ai_automation_1793368525649.jpg",
+      "url": "/images/service_ai_automation_1793368525649.jpg",
       "category": "service",
       "altText": "Connected business workflow orchestration, CRM synchronization, and automated lead routing",
       "dimensions": "1920x1080",
@@ -1959,7 +1959,7 @@
     {
       "id": "media_6",
       "name": "Agency Global Growth Architecture",
-      "url": "/src/assets/images/hero_marketing_growth_1793368523521.jpg",
+      "url": "/images/hero_marketing_growth_1793368523521.jpg",
       "category": "hero",
       "altText": "Telca Marketing international performance and digital growth architecture board",
       "dimensions": "1920x1080",
@@ -1972,7 +1972,7 @@
     {
       "id": "media_7",
       "name": "Executive Case Study Dashboard",
-      "url": "/src/assets/images/portfolio_growth_case_study_1793433686566.jpg",
+      "url": "/images/portfolio_growth_case_study_1793433686566.jpg",
       "category": "case_study",
       "altText": "Multi-channel conversion funnel analytics and attribution modeling case study setup",
       "dimensions": "1920x1080",
@@ -1985,7 +1985,7 @@
     {
       "id": "media_8",
       "name": "Senior Marketing Architects Collaboration",
-      "url": "/src/assets/images/about_agency_strategy_1793433704801.jpg",
+      "url": "/images/about_agency_strategy_1793433704801.jpg",
       "category": "general",
       "altText": "Telca Marketing senior strategists collaborating on international growth roadmaps",
       "dimensions": "1920x1080",
@@ -2082,7 +2082,7 @@
       "measurableResult": "Established a disciplined CPA testing benchmark across 6 primary creative hooks with multi-touch attribution.",
       "summary": "A structured international performance framework testing localized ad copy, dynamic product feeds, and retargeting cadence.",
       "isConceptWork": true,
-      "image": "/src/assets/images/portfolio_growth_case_study_1793433686566.jpg",
+      "image": "/images/portfolio_growth_case_study_1793433686566.jpg",
       "keyOutputs": [
         "12 localized ad angle variants tested",
         "First-party pixel and GA4 event tracking setup",
@@ -2106,7 +2106,7 @@
       "measurableResult": "Unified visual standard across 40+ sales and client presentation assets deployed across international divisions.",
       "summary": "Complete brand collateral modernization aligning executive documents with top-tier international consulting standards.",
       "isConceptWork": true,
-      "image": "/src/assets/images/service_creative_production_1793368525972.jpg",
+      "image": "/images/service_creative_production_1793368525972.jpg",
       "keyOutputs": [
         "Modular 30-slide pitch system in Figma and PowerPoint",
         "Executive whitepaper and case study editorial templates",
@@ -2130,7 +2130,7 @@
       "measurableResult": "Delivered 8 distinct video cut-downs formatted in 9:16 vertical and 1:1 square for immediate multi-platform testing.",
       "summary": "Direct-response motion editing engineered specifically to capture attention and communicate product features within 15 seconds.",
       "isConceptWork": true,
-      "image": "/src/assets/images/service_creative_production_1793368525972.jpg",
+      "image": "/images/service_creative_production_1793368525972.jpg",
       "keyOutputs": [
         "8 edited commercial short cuts in 4K resolution",
         "Dynamic caption styles with high mobile readability",
@@ -2154,7 +2154,7 @@
       "measurableResult": "Maintained a reliable 3-post weekly cadence with 100% on-time approvals and timely response to prospective partner inquiries.",
       "summary": "A disciplined corporate LinkedIn roadmap establishing consistent industry visibility across London, New York, and Dubai.",
       "isConceptWork": true,
-      "image": "/src/assets/images/service_social_media_1793433660938.jpg",
+      "image": "/images/service_social_media_1793433660938.jpg",
       "keyOutputs": [
         "12 monthly branded educational carousels",
         "Streamlined 30-day advance content approval workflow",
@@ -2178,7 +2178,7 @@
       "measurableResult": "Engineered an automated 30-day subscriber nurture journey with verified SPF, DKIM, and DMARC technical alignment.",
       "summary": "A sophisticated email architecture that treats inboxes with respect through thoughtful typography and intentional cadence.",
       "isConceptWork": true,
-      "image": "/src/assets/images/service_email_marketing_1793433673325.jpg",
+      "image": "/images/service_email_marketing_1793433673325.jpg",
       "keyOutputs": [
         "Custom mobile-responsive HTML email template system",
         "Automated Welcome, Browse Abandonment, and VIP flows",
@@ -2202,7 +2202,7 @@
       "measurableResult": "Reduced lead response and routing latency from 24 hours down to under 60 seconds with zero manual data entry errors.",
       "summary": "An autonomous operations backbone connecting ad forms, HubSpot CRM, Slack, and automated calendar invitations.",
       "isConceptWork": true,
-      "image": "/src/assets/images/service_ai_automation_1793368525649.jpg",
+      "image": "/images/service_ai_automation_1793368525649.jpg",
       "keyOutputs": [
         "Self-hosted n8n workflow with custom webhook endpoints",
         "Real-time Slack notification alerts for urgent high-budget inquiries",
@@ -3047,6 +3047,96 @@
         "timestamp": "2026-11-23T08:08:45.492Z"
       },
       "timestamp": "2026-11-23T08:08:44.124Z"
+    },
+    {
+      "id": "agg_1795427851880_fbr8",
+      "type": "time_spent",
+      "path": "#admin",
+      "target": "admin",
+      "device": "desktop",
+      "metadata": {
+        "seconds": 4360,
+        "formatted": "72m 40s",
+        "url": "https://ais-dev-ewc6o36d5ubgjs4a2tkloa-818776418414.asia-northeast1.run.app/#admin",
+        "screenWidth": 832,
+        "timestamp": "2026-11-23T09:57:33.154Z"
+      },
+      "timestamp": "2026-11-23T09:57:31.880Z"
+    },
+    {
+      "id": "agg_1795427871874_eyr0",
+      "type": "time_spent",
+      "path": "#admin",
+      "target": "admin",
+      "device": "desktop",
+      "metadata": {
+        "seconds": 4380,
+        "formatted": "73m 0s",
+        "url": "https://ais-dev-ewc6o36d5ubgjs4a2tkloa-818776418414.asia-northeast1.run.app/#admin",
+        "screenWidth": 832,
+        "timestamp": "2026-11-23T09:57:53.158Z"
+      },
+      "timestamp": "2026-11-23T09:57:51.874Z"
+    },
+    {
+      "id": "agg_1795427952390_1lmb",
+      "type": "time_spent",
+      "path": "#admin",
+      "target": "admin",
+      "device": "desktop",
+      "metadata": {
+        "seconds": 4460,
+        "formatted": "74m 20s",
+        "url": "https://ais-dev-ewc6o36d5ubgjs4a2tkloa-818776418414.asia-northeast1.run.app/#admin",
+        "screenWidth": 832,
+        "timestamp": "2026-11-23T09:59:13.157Z"
+      },
+      "timestamp": "2026-11-23T09:59:12.389Z"
+    },
+    {
+      "id": "agg_1795427971882_dtki",
+      "type": "time_spent",
+      "path": "#admin",
+      "target": "admin",
+      "device": "desktop",
+      "metadata": {
+        "seconds": 4480,
+        "formatted": "74m 40s",
+        "url": "https://ais-dev-ewc6o36d5ubgjs4a2tkloa-818776418414.asia-northeast1.run.app/#admin",
+        "screenWidth": 832,
+        "timestamp": "2026-11-23T09:59:33.154Z"
+      },
+      "timestamp": "2026-11-23T09:59:31.881Z"
+    },
+    {
+      "id": "agg_1795427991875_t10n",
+      "type": "time_spent",
+      "path": "#admin",
+      "target": "admin",
+      "device": "desktop",
+      "metadata": {
+        "seconds": 4500,
+        "formatted": "75m 0s",
+        "url": "https://ais-dev-ewc6o36d5ubgjs4a2tkloa-818776418414.asia-northeast1.run.app/#admin",
+        "screenWidth": 832,
+        "timestamp": "2026-11-23T09:59:53.152Z"
+      },
+      "timestamp": "2026-11-23T09:59:51.874Z"
+    },
+    {
+      "id": "agg_1795428011893_0ba3",
+      "type": "time_spent",
+      "path": "#admin",
+      "target": "admin",
+      "device": "desktop",
+      "metadata": {
+        "seconds": 4520,
+        "formatted": "75m 20s",
+        "url": "https://ais-dev-ewc6o36d5ubgjs4a2tkloa-818776418414.asia-northeast1.run.app/#admin",
+        "screenWidth": 832,
+        "timestamp": "2026-11-23T10:00:13.156Z"
+      },
+      "timestamp": "2026-11-23T10:00:11.893Z"
     }
   ],
   "ownerEmail": "uzairofficials001@gmail.com",
@@ -3437,7 +3527,7 @@
       "device": "desktop",
       "landingPage": "#admin",
       "startedAt": "2026-11-18T14:44:57.522Z",
-      "lastActiveAt": "2026-11-23T08:08:44.124Z",
+      "lastActiveAt": "2026-11-23T10:00:11.893Z",
       "consentGiven": true,
       "events": [
         {
@@ -4438,6 +4528,96 @@
             "timestamp": "2026-11-23T08:08:45.492Z"
           },
           "timestamp": "2026-11-23T08:08:44.124Z"
+        },
+        {
+          "id": "ev_1795427851880_oy4h",
+          "type": "time_spent",
+          "action": "Spent 72m 40s on admin",
+          "label": "admin",
+          "path": "#admin",
+          "metadata": {
+            "seconds": 4360,
+            "formatted": "72m 40s",
+            "url": "https://ais-dev-ewc6o36d5ubgjs4a2tkloa-818776418414.asia-northeast1.run.app/#admin",
+            "screenWidth": 832,
+            "timestamp": "2026-11-23T09:57:33.154Z"
+          },
+          "timestamp": "2026-11-23T09:57:31.880Z"
+        },
+        {
+          "id": "ev_1795427871874_r98k",
+          "type": "time_spent",
+          "action": "Spent 73m 0s on admin",
+          "label": "admin",
+          "path": "#admin",
+          "metadata": {
+            "seconds": 4380,
+            "formatted": "73m 0s",
+            "url": "https://ais-dev-ewc6o36d5ubgjs4a2tkloa-818776418414.asia-northeast1.run.app/#admin",
+            "screenWidth": 832,
+            "timestamp": "2026-11-23T09:57:53.158Z"
+          },
+          "timestamp": "2026-11-23T09:57:51.874Z"
+        },
+        {
+          "id": "ev_1795427952390_t43m",
+          "type": "time_spent",
+          "action": "Spent 74m 20s on admin",
+          "label": "admin",
+          "path": "#admin",
+          "metadata": {
+            "seconds": 4460,
+            "formatted": "74m 20s",
+            "url": "https://ais-dev-ewc6o36d5ubgjs4a2tkloa-818776418414.asia-northeast1.run.app/#admin",
+            "screenWidth": 832,
+            "timestamp": "2026-11-23T09:59:13.157Z"
+          },
+          "timestamp": "2026-11-23T09:59:12.389Z"
+        },
+        {
+          "id": "ev_1795427971882_umor",
+          "type": "time_spent",
+          "action": "Spent 74m 40s on admin",
+          "label": "admin",
+          "path": "#admin",
+          "metadata": {
+            "seconds": 4480,
+            "formatted": "74m 40s",
+            "url": "https://ais-dev-ewc6o36d5ubgjs4a2tkloa-818776418414.asia-northeast1.run.app/#admin",
+            "screenWidth": 832,
+            "timestamp": "2026-11-23T09:59:33.154Z"
+          },
+          "timestamp": "2026-11-23T09:59:31.881Z"
+        },
+        {
+          "id": "ev_1795427991875_oqie",
+          "type": "time_spent",
+          "action": "Spent 75m 0s on admin",
+          "label": "admin",
+          "path": "#admin",
+          "metadata": {
+            "seconds": 4500,
+            "formatted": "75m 0s",
+            "url": "https://ais-dev-ewc6o36d5ubgjs4a2tkloa-818776418414.asia-northeast1.run.app/#admin",
+            "screenWidth": 832,
+            "timestamp": "2026-11-23T09:59:53.152Z"
+          },
+          "timestamp": "2026-11-23T09:59:51.874Z"
+        },
+        {
+          "id": "ev_1795428011893_jhfu",
+          "type": "time_spent",
+          "action": "Spent 75m 20s on admin",
+          "label": "admin",
+          "path": "#admin",
+          "metadata": {
+            "seconds": 4520,
+            "formatted": "75m 20s",
+            "url": "https://ais-dev-ewc6o36d5ubgjs4a2tkloa-818776418414.asia-northeast1.run.app/#admin",
+            "screenWidth": 832,
+            "timestamp": "2026-11-23T10:00:13.156Z"
+          },
+          "timestamp": "2026-11-23T10:00:11.893Z"
         }
       ]
     },
@@ -5880,7 +6060,7 @@
       "keywords": "performance marketing agency, paid ads, creative production, AI automation, Telca Marketing",
       "ogTitle": "Telca Marketing — Performance & Digital Growth Agency",
       "ogDescription": "Turning marketing into measurable growth. We help international businesses attract the right audience, generate quality leads, and scale through paid ads and automation.",
-      "ogImage": "/src/assets/images/hero_marketing_growth_1793368523521.jpg",
+      "ogImage": "/images/hero_marketing_growth_1793368523521.jpg",
       "canonicalUrl": "https://telcamarketing.com/",
       "robots": "index, follow",
       "structuredDataType": "ProfessionalService",
@@ -5896,7 +6076,7 @@
       "keywords": "telca marketing, pricing & bundles, digital growth",
       "ogTitle": "Transparent Digital Marketing Packages & Bundles | Telca Marketing",
       "ogDescription": "Explore clear tier pricing for Meta Ads, Google Ads, Creative Production, Social Media, Email, and Custom Growth Bundles with a 10% discount on 2+ services.",
-      "ogImage": "/src/assets/images/hero_marketing_growth_1793368523521.jpg",
+      "ogImage": "/images/hero_marketing_growth_1793368523521.jpg",
       "canonicalUrl": "https://telcamarketing.com/#pricing",
       "robots": "index, follow",
       "structuredDataType": "WebPage",
@@ -5912,7 +6092,7 @@
       "keywords": "telca marketing, about us, digital growth",
       "ogTitle": "About Telca Marketing — International Performance Growth Agency",
       "ogDescription": "Your Business. Your Goals. Our Strategy. Discover our philosophy, strategic operating hubs, and performance methodology.",
-      "ogImage": "/src/assets/images/hero_marketing_growth_1793368523521.jpg",
+      "ogImage": "/images/hero_marketing_growth_1793368523521.jpg",
       "canonicalUrl": "https://telcamarketing.com/#about",
       "robots": "index, follow",
       "structuredDataType": "WebPage",
@@ -5928,7 +6108,7 @@
       "keywords": "telca marketing, our work & case studies, digital growth",
       "ogTitle": "Performance Case Studies & Client Results | Telca Marketing",
       "ogDescription": "Explore real performance frameworks, multi-channel advertising architectures, and creative iterations across consumer and B2B sectors.",
-      "ogImage": "/src/assets/images/hero_marketing_growth_1793368523521.jpg",
+      "ogImage": "/images/hero_marketing_growth_1793368523521.jpg",
       "canonicalUrl": "https://telcamarketing.com/#work",
       "robots": "index, follow",
       "structuredDataType": "WebPage",
@@ -5944,7 +6124,7 @@
       "keywords": "telca marketing, insights & knowledge, digital growth",
       "ogTitle": "Performance Marketing Insights & Strategy Guides | Telca Marketing",
       "ogDescription": "Practical guides on paid media buying, ad creative testing, email lifecycle automation, and attribution hygiene.",
-      "ogImage": "/src/assets/images/hero_marketing_growth_1793368523521.jpg",
+      "ogImage": "/images/hero_marketing_growth_1793368523521.jpg",
       "canonicalUrl": "https://telcamarketing.com/#insights",
       "robots": "index, follow",
       "structuredDataType": "WebPage",
@@ -5960,7 +6140,7 @@
       "keywords": "telca marketing, contact & consultations, digital growth",
       "ogTitle": "Contact Telca Marketing — Schedule an Inbound Strategy Call",
       "ogDescription": "Start a conversation about your marketing goals. Response within one business day across our US, UK, UAE, and Australia desks.",
-      "ogImage": "/src/assets/images/hero_marketing_growth_1793368523521.jpg",
+      "ogImage": "/images/hero_marketing_growth_1793368523521.jpg",
       "canonicalUrl": "https://telcamarketing.com/#contact",
       "robots": "index, follow",
       "structuredDataType": "WebPage",

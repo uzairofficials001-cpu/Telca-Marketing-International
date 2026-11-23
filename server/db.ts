@@ -543,7 +543,7 @@ function getInitialData(): DbSchema {
     {
       id: 'media_1',
       name: 'Paid Advertising Command Center',
-      url: '/src/assets/images/service_performance_ads_1793368524817.jpg',
+      url: '/images/service_performance_ads_1793368524817.jpg',
       category: 'service',
       altText: 'Telca Marketing paid media performance analytics dashboard and campaign management interface',
       dimensions: '1920x1080',
@@ -554,7 +554,7 @@ function getInitialData(): DbSchema {
     {
       id: 'media_2',
       name: 'Creative & Content Production Studio',
-      url: '/src/assets/images/service_creative_production_1793368525972.jpg',
+      url: '/images/service_creative_production_1793368525972.jpg',
       category: 'service',
       altText: 'Video editing, motion graphics, and graphic design workspace for direct-response marketing',
       dimensions: '1920x1080',
@@ -565,7 +565,7 @@ function getInitialData(): DbSchema {
     {
       id: 'media_3',
       name: 'Social Media Management Workspace',
-      url: '/src/assets/images/service_social_media_1793433660938.jpg',
+      url: '/images/service_social_media_1793433660938.jpg',
       category: 'service',
       altText: 'Multi-channel social editorial calendar and community engagement management dashboard',
       dimensions: '1920x1080',
@@ -576,7 +576,7 @@ function getInitialData(): DbSchema {
     {
       id: 'media_4',
       name: 'Email Marketing & Retention Canvas',
-      url: '/src/assets/images/service_email_marketing_1793433673325.jpg',
+      url: '/images/service_email_marketing_1793433673325.jpg',
       category: 'service',
       altText: 'Automated email sequence workflow builder, newsletter design, and deliverability analytics',
       dimensions: '1920x1080',
@@ -587,7 +587,7 @@ function getInitialData(): DbSchema {
     {
       id: 'media_5',
       name: 'AI & Business Automation Pipeline',
-      url: '/src/assets/images/service_ai_automation_1793368525649.jpg',
+      url: '/images/service_ai_automation_1793368525649.jpg',
       category: 'service',
       altText: 'Connected business workflow orchestration, CRM synchronization, and automated lead routing',
       dimensions: '1920x1080',
@@ -598,7 +598,7 @@ function getInitialData(): DbSchema {
     {
       id: 'media_6',
       name: 'Agency Global Growth Architecture',
-      url: '/src/assets/images/hero_marketing_growth_1793368523521.jpg',
+      url: '/images/hero_marketing_growth_1793368523521.jpg',
       category: 'hero',
       altText: 'Telca Marketing international performance and digital growth architecture board',
       dimensions: '1920x1080',
@@ -609,7 +609,7 @@ function getInitialData(): DbSchema {
     {
       id: 'media_7',
       name: 'Executive Case Study Dashboard',
-      url: '/src/assets/images/portfolio_growth_case_study_1793433686566.jpg',
+      url: '/images/portfolio_growth_case_study_1793433686566.jpg',
       category: 'case_study',
       altText: 'Multi-channel conversion funnel analytics and attribution modeling case study setup',
       dimensions: '1920x1080',
@@ -620,7 +620,7 @@ function getInitialData(): DbSchema {
     {
       id: 'media_8',
       name: 'Senior Marketing Architects Collaboration',
-      url: '/src/assets/images/about_agency_strategy_1793433704801.jpg',
+      url: '/images/about_agency_strategy_1793433704801.jpg',
       category: 'general',
       altText: 'Telca Marketing senior strategists collaborating on international growth roadmaps',
       dimensions: '1920x1080',
@@ -811,7 +811,7 @@ function getInitialData(): DbSchema {
         : `telca marketing, ${pg.title.toLowerCase()}, digital growth`,
       ogTitle: pg.seoTitle,
       ogDescription: pg.seoDescription,
-      ogImage: '/src/assets/images/hero_marketing_growth_1793368523521.jpg',
+      ogImage: '/images/hero_marketing_growth_1793368523521.jpg',
       canonicalUrl: pg.slug === 'home' ? 'https://telcamarketing.com/' : `https://telcamarketing.com/#${pg.slug}`,
       robots: 'index, follow',
       structuredDataType: pg.slug === 'home' ? 'ProfessionalService' : 'WebPage',
@@ -847,7 +847,7 @@ function getInitialData(): DbSchema {
       defaultSeo: {
         metaTitle: 'Telca Marketing — Performance & Digital Growth Agency',
         metaDescription: 'Turning marketing into measurable growth through strategic advertising, creative content, and intelligent automation.',
-        ogImage: '/src/assets/images/hero_marketing_growth_1793368523521.jpg',
+        ogImage: '/images/hero_marketing_growth_1793368523521.jpg',
         canonicalDomain: 'https://telcamarketing.com'
       },
       cookieConsent: {
@@ -1437,6 +1437,39 @@ export function initDb(): DbSchema {
     if (!Array.isArray(parsed.deletedEnquiries)) {
       parsed.deletedEnquiries = [];
       modified = true;
+    }
+
+    const migrateAssetPath = (value?: string) =>
+      typeof value === 'string' && value.startsWith('/src/assets/images/')
+        ? value.replace('/src/assets/images/', '/images/')
+        : value;
+
+    for (const item of parsed.services || []) {
+      const next = migrateAssetPath(item.image);
+      if (next !== item.image) { item.image = next; modified = true; }
+    }
+    for (const item of parsed.portfolio || []) {
+      const next = migrateAssetPath(item.image);
+      if (next !== item.image) { item.image = next; modified = true; }
+    }
+    for (const item of parsed.mediaLibrary || []) {
+      const next = migrateAssetPath(item.url);
+      if (next !== item.url) { item.url = next; modified = true; }
+    }
+    for (const item of parsed.seoMetaTags || []) {
+      const next = migrateAssetPath(item.ogImage);
+      if (next !== item.ogImage) { item.ogImage = next; modified = true; }
+    }
+    for (const item of parsed.blog || []) {
+      const next = migrateAssetPath(item.image);
+      if (next !== item.image) { item.image = next; modified = true; }
+    }
+    if (parsed.settings?.defaultSeo?.ogImage) {
+      const next = migrateAssetPath(parsed.settings.defaultSeo.ogImage);
+      if (next !== parsed.settings.defaultSeo.ogImage) {
+        parsed.settings.defaultSeo.ogImage = next;
+        modified = true;
+      }
     }
 
     if (modified) {

@@ -3,6 +3,7 @@ import { PageId, ServiceDetail } from '../types';
 import { servicesData } from '../data/servicesData';
 import { AnimatedSection, StaggerContainer, StaggerItem } from '../components/AnimatedSection';
 import { AllServicesDirectorySection } from '../components/AllServicesDirectorySection';
+import { MEDIA_ASSETS, resolveMediaUrl } from '../utils/mediaAssets';
 import { 
   ArrowRight, 
   ChevronDown, 
@@ -150,7 +151,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
             <div className="lg:col-span-5">
               <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white">
                 <img
-                  src={service.image}
+                  src={resolveMediaUrl(service.image, MEDIA_ASSETS.servicePerformanceAds)}
                   alt={service.title}
                   className="w-full h-80 sm:h-96 object-cover"
                   referrerPolicy="no-referrer"
