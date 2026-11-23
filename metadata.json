@@ -1,0 +1,6 @@
+{
+  "name": "Telca Marketing",
+  "description": "Premium international digital marketing, performance advertising, creative production, and AI business automation agency.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

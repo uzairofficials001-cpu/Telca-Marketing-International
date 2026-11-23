@@ -1,0 +1,2462 @@
+{
+  "users": [
+    {
+      "id": "user_admin_01",
+      "fullName": "Telca Senior Administrator",
+      "email": "admin@telcamarketing.com",
+      "passwordHash": "$2b$10$fTilesvX8jNs8oKNM1Q0ieTpSiWiZN0tcv1MUinbQtzL9tghIUIbi",
+      "role": "admin",
+      "status": "active",
+      "createdAt": "2026-10-30T15:07:25.072Z",
+      "resetToken": "reset_6bun7ngr1793372944026"
+    },
+    {
+      "id": "user_admin_02",
+      "fullName": "Uzair Admin",
+      "email": "uzairofficials001@gmail.com",
+      "passwordHash": "$2b$10$fTilesvX8jNs8oKNM1Q0ieTpSiWiZN0tcv1MUinbQtzL9tghIUIbi",
+      "role": "admin",
+      "status": "active",
+      "createdAt": "2026-10-30T15:07:25.072Z",
+      "isOwner": true,
+      "lastLogin": "2026-10-31T09:07:30.618Z"
+    },
+    {
+      "id": "user_1793434320165",
+      "fullName": "Regular Client",
+      "email": "client@testfirm.com",
+      "passwordHash": "$2b$10$RsbSstvtbjFpgWbqxUtFnudVkLGCLZpT41JIuDMdEktRiwAm04VBC",
+      "role": "user",
+      "isOwner": false,
+      "status": "active",
+      "createdAt": "2026-10-31T08:12:00.165Z",
+      "lastLogin": "2026-10-31T08:12:04.684Z"
+    }
+  ],
+  "enquiries": [
+    {
+      "id": "enq_1793372919913",
+      "referenceId": "TM-234414",
+      "type": "custom_bundle",
+      "fullName": "Test Client",
+      "businessEmail": "client@globalenterprise.com",
+      "companyName": "Global Enterprise",
+      "websiteUrl": "https://globalenterprise.com",
+      "country": "International",
+      "serviceRequired": "Paid Advertising",
+      "budget": "",
+      "message": "",
+      "preferredDate": "",
+      "selectedServices": [
+        {
+          "id": "meta-ads",
+          "name": "Meta Ads Management",
+          "tier": "Growth",
+          "price": 699,
+          "billingType": "monthly"
+        },
+        {
+          "id": "google-ads",
+          "name": "Google Ads Management",
+          "tier": "Growth",
+          "price": 749,
+          "billingType": "monthly"
+        }
+      ],
+      "monthlyTotal": 1448,
+      "oneTimeTotal": 0,
+      "discountPercentage": 10,
+      "discountAmount": 145,
+      "finalPrice": 1303,
+      "businessGoals": "Scale international lead gen",
+      "additionalRequirements": "UK and US targeting",
+      "status": "new",
+      "notes": [],
+      "createdAt": "2026-10-30T15:08:39.913Z"
+    },
+    {
+      "id": "enq_init_01",
+      "referenceId": "TM-782419",
+      "type": "contact",
+      "fullName": "Sarah Jenkins",
+      "businessEmail": "sarah@beaconhealth.co.uk",
+      "companyName": "Beacon Healthcare UK",
+      "websiteUrl": "https://beaconhealth.co.uk",
+      "country": "United Kingdom",
+      "serviceRequired": "Paid Advertising",
+      "budget": "$3,000–$5,000",
+      "message": "Looking to optimize patient acquisition campaigns across Google Search and Meta Ads in the UK market.",
+      "preferredDate": "2026-11-10",
+      "status": "new",
+      "notes": [
+        {
+          "text": "Preliminary audit scheduled with performance marketing lead.",
+          "author": "Admin",
+          "createdAt": "2026-10-30T15:07:25.072Z"
+        }
+      ],
+      "createdAt": "2026-10-30T10:07:25.072Z"
+    },
+    {
+      "id": "enq_init_02",
+      "referenceId": "TM-914283",
+      "type": "custom_bundle",
+      "fullName": "Marcus Vance",
+      "businessEmail": "m.vance@nordicstyle.ae",
+      "companyName": "Nordic Style Furniture",
+      "websiteUrl": "https://nordicstyle.ae",
+      "country": "United Arab Emirates",
+      "serviceRequired": "Custom Growth Package",
+      "selectedServices": [
+        {
+          "id": "meta-ads",
+          "name": "Meta Ads Management",
+          "tier": "Growth",
+          "price": 699,
+          "billingType": "monthly"
+        },
+        {
+          "id": "creative",
+          "name": "Creative & Content Production",
+          "tier": "Growth",
+          "price": 499,
+          "billingType": "monthly"
+        }
+      ],
+      "monthlyTotal": 1198,
+      "oneTimeTotal": 0,
+      "discountPercentage": 10,
+      "discountAmount": 119.8,
+      "finalPrice": 1078.2,
+      "businessGoals": "Expand luxury residential furniture market reach across Dubai and Abu Dhabi.",
+      "additionalRequirements": "Bilingual English/Arabic creatives needed.",
+      "status": "reviewed",
+      "notes": [
+        {
+          "text": "Custom bundle verified with 10% discount applied to recurring services.",
+          "author": "Admin",
+          "createdAt": "2026-10-30T15:07:25.072Z"
+        }
+      ],
+      "createdAt": "2026-10-29T17:07:25.072Z"
+    }
+  ],
+  "services": [
+    {
+      "id": "paid-advertising",
+      "pageId": "service-paid-advertising",
+      "title": "Paid Advertising & Performance Marketing",
+      "shortDescription": "We help businesses reach the right audience, generate quality leads and increase sales through strategic digital advertising campaigns.",
+      "badge": "Performance Advertising",
+      "heroHeadline": "Strategic Digital Advertising Engineered For Measurable Returns.",
+      "heroSubheadline": "We design, launch, monitor and optimize targeted multi-channel ad campaigns that connect your brand with high-intent buyers across global markets.",
+      "image": "/src/assets/images/service_performance_ads_1793368524817.jpg",
+      "problemsSolved": [
+        {
+          "problem": "Ad Spend Without Predictable Returns",
+          "explanation": "Many businesses burn budget on generic boosting without structured audience testing, pixel tracking or conversion funnel hygiene."
+        },
+        {
+          "problem": "Reaching the Wrong Audience",
+          "explanation": "Clicks that never convert cost money and skew algorithmic learning. We calibrate high-intent targeting parameters for exact buyer profiles."
+        },
+        {
+          "problem": "Channel Saturation & Rising Ad Costs",
+          "explanation": "Relying on a single platform creates vulnerability. We balance budgets across search, social, and emerging ad ecosystems for sustainable efficiency."
+        },
+        {
+          "problem": "Lack of Transparent Attribution",
+          "explanation": "Without clean tracking, you cannot tell which ad generated which sale. We configure reliable attribution so you know what works."
+        }
+      ],
+      "whatIsIncluded": [
+        {
+          "title": "Meta Ads (Facebook & Instagram)",
+          "description": "Targeted visual and video advertising across Facebook and Instagram feeds, Stories, and Reels to engage active consumers and high-value decision-makers.",
+          "points": [
+            "Custom and lookalike audience segmentation",
+            "Full-funnel conversion campaigns (Prospecting & Retargeting)",
+            "Advantage+ shopping and catalog integration",
+            "Creative iteration and A/B ad variant testing"
+          ]
+        },
+        {
+          "title": "Google Ads (Search, Performance Max & YouTube)",
+          "description": "Capture active demand the moment prospects search for your solutions on Google, YouTube, and the Google Display Network.",
+          "points": [
+            "High-intent keyword research and negative match hygiene",
+            "Google Search text ads & responsive search ads",
+            "Performance Max campaigns with asset grouping",
+            "Conversion-focused landing page alignment"
+          ]
+        },
+        {
+          "title": "LinkedIn Ads",
+          "description": "Precision B2B targeting by job function, seniority, company size, and specific account lists for enterprise and high-ticket service client acquisition.",
+          "points": [
+            "Sponsored Content & Document ads",
+            "Lead gen forms with direct CRM sync",
+            "Account-Based Marketing (ABM) matching",
+            "Executive thought leadership amplification"
+          ]
+        },
+        {
+          "title": "TikTok Ads & Snapchat Ads",
+          "description": "High-energy, native short-form video advertising tailored to younger demographics and fast-moving direct-to-consumer lifestyle categories.",
+          "points": [
+            "Native Spark Ads and in-feed short-form video formats",
+            "Interest and behavioral lifestyle clustering",
+            "Trend-aligned commercial messaging",
+            "Rapid creative refresh cycles"
+          ]
+        },
+        {
+          "title": "Emerging AI Advertising (ChatGPT & OpenAI Ads)",
+          "description": "Strategic readiness and campaign deployment for emerging conversational search and AI answer engine advertising where commercially available.",
+          "points": [
+            "Prompt and intent-based conversational brand placement",
+            "Contextual relevance mapping within AI ecosystems",
+            "Early-adopter testing frameworks for next-generation search",
+            "Brand safety and algorithmic compliance governance"
+          ]
+        }
+      ],
+      "campaignObjectives": [
+        "Lead Generation: Capture verified contact details from qualified prospects",
+        "Website Traffic: Drive targeted, engaged visitors to key conversion landing pages",
+        "Online Sales: Generate direct purchases for eCommerce and transactional brands",
+        "Brand Awareness: Elevate recognition among defined industry or regional buyers",
+        "Customer Acquisition: Lower cost-per-acquisition (CPA) through structured funnels",
+        "Retargeting: Re-engage warm prospects who browsed or initiated inquiries"
+      ],
+      "platformsAndTools": [
+        {
+          "name": "Meta Ads Manager",
+          "category": "Social Ads",
+          "description": "Deep audience segmentation & conversion pixel optimization."
+        },
+        {
+          "name": "Google Ads & PMax",
+          "category": "Search & Video",
+          "description": "Intent-driven search ads, Shopping, and YouTube placements."
+        },
+        {
+          "name": "LinkedIn Campaign Manager",
+          "category": "B2B Ads",
+          "description": "Strict account-level firmographic and professional targeting."
+        },
+        {
+          "name": "TikTok Ads Manager",
+          "category": "Short-Form",
+          "description": "Algorithm-native video ad pacing and creative testing."
+        },
+        {
+          "name": "Google Analytics 4 & Tag Manager",
+          "category": "Attribution",
+          "description": "First-party event tracking, UTM taxonomy, and cross-channel tracking."
+        }
+      ],
+      "process": [
+        {
+          "step": "01",
+          "title": "Audience & Offer Audit",
+          "description": "We analyze your current metrics, target customer economics, competitors, and conversion tracking hygiene before deploying budget."
+        },
+        {
+          "step": "02",
+          "title": "Campaign Architecture",
+          "description": "We structure clean campaign hierarchy separating prospecting, retargeting, and brand defense across chosen platforms."
+        },
+        {
+          "step": "03",
+          "title": "Testing & Soft Launch",
+          "description": "We launch controlled test budgets with multiple creative angles, hooks, and audience segments to establish benchmark unit economics."
+        },
+        {
+          "step": "04",
+          "title": "Scale & Continuous Optimization",
+          "description": "We systematically reallocate budget into winning ad sets, prune underperforming creatives, and optimize bids weekly."
+        }
+      ],
+      "businessBenefits": [
+        {
+          "title": "Controlled Customer Acquisition",
+          "description": "Turn guessing into a structured pipeline where every dollar spent is tracked against business inquiries and transactions."
+        },
+        {
+          "title": "Multi-Market Expansion",
+          "description": "Test and scale campaigns smoothly across the US, UK, UAE, Australia, and international territories with localized messaging."
+        },
+        {
+          "title": "Realistic Optimization Cycle",
+          "description": "Campaigns are planned, monitored and optimized according to business goals. We do not promise speculative instant riches; we build defensible, data-backed growth."
+        }
+      ],
+      "portfolioPlaceholders": [
+        {
+          "title": "International D2C Performance Campaign",
+          "label": "Concept Work / Sample Project",
+          "industry": "Direct-to-Consumer / Lifestyle",
+          "strategy": "Multi-territory Meta + Google PMax campaign funnel with localized currency routing across US & UK markets.",
+          "metrics": "Structured CPA testing framework, achieving stable lead cost reduction over 90-day test sequence."
+        },
+        {
+          "title": "B2B Professional Services Inbound Funnel",
+          "label": "Concept Work / Sample Project",
+          "industry": "Corporate Advisory / Legal",
+          "strategy": "LinkedIn Sponsored Content matched with high-intent Google Search for corporate decision-makers in London and Dubai.",
+          "metrics": "Targeted high-ticket consultation inquiry pipeline with zero wasted broad-match click spend."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Do you guarantee a specific return on ad spend or sales number?",
+          "answer": "No reputable performance agency can ethically guarantee sales numbers, because conversion depends on external variables including product-market fit, pricing, sales closing, and market competition. What we do guarantee is disciplined media buying, rigorous testing, transparent reporting, and continuous data-driven optimization."
+        },
+        {
+          "question": "What is the minimum ad spend required to work together?",
+          "answer": "While we work with various tiers, we generally recommend a minimum monthly ad spend of $1,000–$2,000 to generate sufficient statistical data for the advertising algorithms to learn and optimize effectively."
+        },
+        {
+          "question": "Who owns the advertising accounts and data?",
+          "answer": "You retain 100% ownership of your ad accounts, business managers, tracking pixels, and creative assets. Telca operates through standard partner access."
+        },
+        {
+          "question": "How frequently do we review campaign performance?",
+          "answer": "You receive live dashboard access, weekly email status updates on key actions, and a comprehensive monthly performance review analyzing trends, learnings, and next-month priorities."
+        }
+      ]
+    },
+    {
+      "id": "creative-production",
+      "pageId": "service-creative-production",
+      "title": "Creative & Content Production",
+      "shortDescription": "We create engaging visuals, videos and marketing content that capture attention and help businesses communicate their value.",
+      "badge": "Creative Production",
+      "heroHeadline": "Strategic Creative That Stops The Scroll And Communicates Value.",
+      "heroSubheadline": "We produce high-impact ad creatives, brand graphics, and short-form video assets engineered to perform across paid and organic digital channels.",
+      "image": "/src/assets/images/service_creative_production_1793368525972.jpg",
+      "problemsSolved": [
+        {
+          "problem": "Creative Fatigue & Ad Burnout",
+          "explanation": "Audiences tune out repetitive ads within days. Without fresh visual iterations, advertising costs climb and conversion rates drop."
+        },
+        {
+          "problem": "Generic Stock Imagery That Fails To Connect",
+          "explanation": "Overused stock photos look impersonal and erode brand trust. Modern buyers respond to authentic, polished, brand-aligned creative."
+        },
+        {
+          "problem": "Disconnect Between Creative and Performance",
+          "explanation": "Pretty designs that do not address customer pain points fail to sell. We blend direct-response copywriting with clean visual design."
+        },
+        {
+          "problem": "Inconsistent Visual Identity Across Platforms",
+          "explanation": "Disjointed graphics across Instagram, LinkedIn, and websites weaken credibility. We maintain consistent brand rigor across all touchpoints."
+        }
+      ],
+      "whatIsIncluded": [
+        {
+          "title": "A. Ad Creative Production",
+          "description": "Direct-response visual assets engineered specifically for paid campaigns to maximize click-through and engagement.",
+          "points": [
+            "AI-Powered Ad Creatives and rapid angle generation",
+            "Social media ad designs (static, split-screen, feature highlight)",
+            "High-converting video ad creatives & motion graphics",
+            "Multi-slide carousel ads with educational hooks",
+            "UGC-style ad creatives crafted for native platform feel"
+          ]
+        },
+        {
+          "title": "B. Graphic & Brand Design",
+          "description": "Polished brand visual collateral that establishes authority and differentiates your business in competitive global markets.",
+          "points": [
+            "Core graphic design for web and digital campaigns",
+            "Social media graphics and branded template systems",
+            "Marketing materials (one-pagers, brochures, slide decks)",
+            "Brand visuals, color palettes, and typographic styling",
+            "Promotional designs for product launches and seasonal events"
+          ]
+        },
+        {
+          "title": "C. Video & Content Production",
+          "description": "Engaging motion content, professional post-production editing, and compelling copy that articulate your core message clearly.",
+          "points": [
+            "Professional video editing and color grading",
+            "Short-form vertical videos for Instagram Reels and TikTok",
+            "Ad video editing with kinetic captions and attention hooks",
+            "Strategic content writing & commercial copywriting",
+            "Direct-response ad copywriting (headlines, primary text, CTAs)",
+            "Marketing scripts for founder videos, demos, and voiceovers"
+          ]
+        }
+      ],
+      "platformsAndTools": [
+        {
+          "name": "Adobe Premiere Pro & After Effects",
+          "category": "Video Production",
+          "description": "Broadcast-grade video editing, pacing, and motion graphics."
+        },
+        {
+          "name": "Figma & Adobe Illustrator",
+          "category": "Visual Design",
+          "description": "Responsive marketing collateral, layout typography, and brand systems."
+        },
+        {
+          "name": "DaVinci Resolve",
+          "category": "Color & Mastering",
+          "description": "Professional color grading for commercial video production."
+        },
+        {
+          "name": "Generative AI Image & Motion Tools",
+          "category": "AI Prototyping",
+          "description": "Rapid concept ideation and visual storyboard iteration."
+        }
+      ],
+      "process": [
+        {
+          "step": "01",
+          "title": "Creative Brief & Customer Psychology",
+          "description": "We define the core customer desires, objections, and messaging angles that will resonate with your target market."
+        },
+        {
+          "step": "02",
+          "title": "Concepting & Storyboarding",
+          "description": "We draft hooks, visual storyboards, and copy variations for review before full production begins."
+        },
+        {
+          "step": "03",
+          "title": "Production & Refinement",
+          "description": "Our design and video editors build the visual assets with meticulous attention to typography, pacing, and audio design."
+        },
+        {
+          "step": "04",
+          "title": "Format Delivery & Iteration",
+          "description": "We deliver assets formatted in 9:16, 1:1, and 16:9 aspect ratios ready for paid ad platforms and organic distribution."
+        }
+      ],
+      "businessBenefits": [
+        {
+          "title": "Higher Engagement & Click-Through Rates",
+          "description": "Creative engineered with strong first-3-second hooks captures attention in crowded international feeds."
+        },
+        {
+          "title": "Brand Consistency & Authority",
+          "description": "Every post, video, and ad reflects high corporate standards that build long-term trust."
+        },
+        {
+          "title": "Rapid Testing Pipeline",
+          "description": "Continuous batches of fresh creative angles prevent ad fatigue and keep customer acquisition costs sustainable."
+        }
+      ],
+      "portfolioPlaceholders": [
+        {
+          "title": "Visual Identity & Ad Creative Suite",
+          "label": "Concept Work / Sample Project",
+          "industry": "Consumer Technology / Smart Living",
+          "strategy": "Cohesive visual asset library featuring 12 static ads, 6 video variations, and a modular Instagram carousel system.",
+          "metrics": "Consistent multi-channel design kit ready for simultaneous rollout in the US and EU."
+        },
+        {
+          "title": "Executive Thought Leadership Video Series",
+          "label": "Concept Work / Sample Project",
+          "industry": "FinTech & B2B Consulting",
+          "strategy": "Short-form educational video editing with clean typography and subtitle styling optimized for LinkedIn and YouTube Shorts.",
+          "metrics": "Clean editorial pacing communicating complex financial concepts in under 60 seconds."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Can you work with our existing raw footage and brand guidelines?",
+          "answer": "Yes. If you already have brand guidelines, product photography, or phone-recorded videos, our editors and designers can refine, polish, and repurpose them into high-performing commercial assets."
+        },
+        {
+          "question": "In what formats and aspect ratios do you deliver files?",
+          "answer": "We deliver all assets in their native optimized formats (MP4, PNG, JPG, SVG, WebP) tailored to 9:16 (Stories/Reels/TikTok), 1:1 (Feed/Square), and 16:9 (Desktop/YouTube), organized in shared cloud folders."
+        },
+        {
+          "question": "How do you handle revisions?",
+          "answer": "Every creative production project includes structured feedback rounds where you can review drafts and request edits before final sign-off."
+        }
+      ]
+    },
+    {
+      "id": "social-media",
+      "pageId": "service-social-media",
+      "title": "Social Media Management",
+      "shortDescription": "We help businesses build a consistent online presence, connect with their audience and strengthen their brand through strategic social media management.",
+      "badge": "Organic Social Growth",
+      "heroHeadline": "Consistent, Authoritative Social Presence That Builds Real Brand Equity.",
+      "heroSubheadline": "We craft authentic organic content, manage publishing schedules, and engage your community so your brand stays top-of-mind across major global platforms.",
+      "image": "/src/assets/images/hero_marketing_growth_1793368523521.jpg",
+      "problemsSolved": [
+        {
+          "problem": "Inconsistent Posting & Ghost Town Profiles",
+          "explanation": "Prospective clients check social profiles before buying. Inactive accounts signal neglect and cost you credibility."
+        },
+        {
+          "problem": "Confusing Organic Reach With Paid Advertising",
+          "explanation": "Organic social builds brand affinity and trust; paid ads drive direct traffic and conversions. We clarify both roles so each delivers maximum value."
+        },
+        {
+          "problem": "Time Drain on Founders & Internal Teams",
+          "explanation": "Writing captions, designing graphics, and researching topics takes hours every week away from your core operations."
+        },
+        {
+          "problem": "Lack of Cohesive Content Strategy",
+          "explanation": "Posting random memes or generic quotes yields no real business inquiries. We align content pillars with your strategic business goals."
+        }
+      ],
+      "whatIsIncluded": [
+        {
+          "title": "Social Media Strategy & Content Architecture",
+          "description": "Comprehensive roadmapping of your target audience, core messaging pillars, tone of voice, and competitive positioning.",
+          "points": [
+            "Audience profile research and competitor audit",
+            "Content pillars (Educational, Brand Authority, Behind-the-Scenes, Social Proof)",
+            "Tone of voice definition and visual branding guidelines"
+          ]
+        },
+        {
+          "title": "Content Calendar Planning & Scheduling",
+          "description": "Structured monthly editorial planning so your company’s communication is organized weeks in advance.",
+          "points": [
+            "Monthly editorial content calendars for approval",
+            "Visual mockups of feeds and posting cadence",
+            "Automated multi-channel scheduling during peak audience activity windows"
+          ]
+        },
+        {
+          "title": "Organic Content Publishing & Management",
+          "description": "Full-service handling of publishing across your official business profiles with tailored platform formatting.",
+          "points": [
+            "Platform-specific caption writing with natural call-to-actions",
+            "Carousels, single-image posts, and short video publishing",
+            "Hashtag and keyword optimization for discoverability"
+          ]
+        },
+        {
+          "title": "Community Management & Engagement",
+          "description": "Active monitoring of your public comments, mentions, and inbound questions to foster authentic relationships.",
+          "points": [
+            "Timely response to community comments and inquiries",
+            "Proactive engagement on industry-relevant accounts and conversations",
+            "Spam moderation and brand reputation protection"
+          ]
+        },
+        {
+          "title": "Performance Reporting & Analysis",
+          "description": "Transparent monthly reporting analyzing audience growth, top-performing topics, and engagement patterns.",
+          "points": [
+            "Monthly reach and follower quality breakdown",
+            "Content resonance analysis (which themes drove real engagement)",
+            "Actionable recommendations for the upcoming monthly cycle"
+          ]
+        }
+      ],
+      "platformsAndTools": [
+        {
+          "name": "LinkedIn Company & Executive Pages",
+          "category": "B2B Authority",
+          "description": "Thought leadership, business milestones, and industry commentary."
+        },
+        {
+          "name": "Instagram & Facebook",
+          "category": "Visual & Community",
+          "description": "Brand storytelling, product showcases, customer spotlights, and Reels."
+        },
+        {
+          "name": "TikTok & Short-Form Video",
+          "category": "Culture & Discovery",
+          "description": "Trend-aware educational videos and humanized brand perspective."
+        },
+        {
+          "name": "Buffer / Later / Metricool",
+          "category": "Scheduling & Analytics",
+          "description": "Reliable multi-network scheduling and consolidated audience data."
+        }
+      ],
+      "process": [
+        {
+          "step": "01",
+          "title": "Brand Voice Discovery",
+          "description": "We document your brand positioning, target demographics, and preferred tone of communication."
+        },
+        {
+          "step": "02",
+          "title": "Monthly Calendar Construction",
+          "description": "We draft the monthly calendar with copy, graphics, and video suggestions for your review and sign-off."
+        },
+        {
+          "step": "03",
+          "title": "Publishing & Community Care",
+          "description": "We schedule approved posts and monitor engagement, comments, and community interactions."
+        },
+        {
+          "step": "04",
+          "title": "Monthly Insights Review",
+          "description": "We analyze what resonated best with your audience to refine subsequent content cycles."
+        }
+      ],
+      "businessBenefits": [
+        {
+          "title": "Professional Credibility",
+          "description": "When potential partners or clients look you up, they find an active, respected, and polished organization."
+        },
+        {
+          "title": "Audience Retention & Trust",
+          "description": "Stay top-of-mind with past clients and warm prospects so they choose you when ready to purchase."
+        },
+        {
+          "title": "Reclaimed Executive Time",
+          "description": "Free up 10–15 hours every week knowing your public social channels are managed consistently."
+        }
+      ],
+      "portfolioPlaceholders": [
+        {
+          "title": "Multi-Channel B2B Authority System",
+          "label": "Concept Work / Sample Project",
+          "industry": "Logistics & Supply Chain Technology",
+          "strategy": "Structured LinkedIn and Twitter/X content roadmap with 16 monthly technical infographics and weekly case summaries.",
+          "metrics": "Consistent weekly corporate communication cadence reaching international transport executives."
+        },
+        {
+          "title": "Modern Retail Brand Community Cadence",
+          "label": "Concept Work / Sample Project",
+          "industry": "Sustainable Home Goods",
+          "strategy": "Instagram visual grid planning combined with short-form educational Reels demonstrating product craftsmanship.",
+          "metrics": "Elevated organic engagement rate and unified aesthetic across US and Australian followers."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What is the main difference between organic social management and paid ads?",
+          "answer": "Organic social media management focuses on building your brand’s reputation, communicating with existing followers, and establishing long-term trust without paying platforms for each impression. Paid advertising, on the other hand, pays platforms directly to put your message in front of new, highly targeted people who do not follow you yet. Both work best together."
+        },
+        {
+          "question": "Do you create the posts or do we have to provide all the content?",
+          "answer": "We provide full end-to-end creation including copywriting, graphic design, and video formatting. We only ask for occasional updates or photos from your operations to keep content authentic."
+        },
+        {
+          "question": "Do we get to approve posts before they go live?",
+          "answer": "Yes. Every post is scheduled into a visual calendar for your team to review, comment on, and approve before anything is published."
+        }
+      ]
+    },
+    {
+      "id": "email-marketing",
+      "pageId": "service-email-marketing",
+      "title": "Email Marketing & Retention",
+      "shortDescription": "We help businesses build stronger customer relationships and generate more opportunities through strategic email campaigns and automated communication.",
+      "badge": "Email & Retention",
+      "heroHeadline": "Direct Customer Communication That Nurtures Relationships And Drives Inquiries.",
+      "heroSubheadline": "We build automated email sequences, beautiful newsletters, and targeted campaigns that engage subscribers and maximize customer lifetime value.",
+      "image": "/src/assets/images/service_performance_ads_1793368524817.jpg",
+      "problemsSolved": [
+        {
+          "problem": "Unused Email Lists Collecting Dust",
+          "explanation": "Acquiring an email address costs money. Leaving that subscriber list dormant lets leads go cold and wastes customer value."
+        },
+        {
+          "problem": "Emails Landing in Spam or Promotions Tabs",
+          "explanation": "Poor domain authentication, spammy keywords, and bloated code send your message straight to the junk folder."
+        },
+        {
+          "problem": "One-Size-Fits-All Email Blasts",
+          "explanation": "Sending the same generic message to VIP buyers and new sign-ups causes high unsubscribe rates and low click-through."
+        },
+        {
+          "problem": "Lack of Automated Follow-Up Sequences",
+          "explanation": "Prospects rarely buy on day one. Without automated welcome sequences and nurture flows, interested leads slip through the cracks."
+        }
+      ],
+      "whatIsIncluded": [
+        {
+          "title": "Email Campaign Management",
+          "description": "End-to-end planning, copywriting, and sending of broadcast campaigns tailored to your promotions, product updates, and company news.",
+          "points": [
+            "Subscriber list segmentation by activity and interests",
+            "Promotional and seasonal email campaigns",
+            "Product announcement and company update broadcasts"
+          ]
+        },
+        {
+          "title": "Newsletter Design & Editorial Strategy",
+          "description": "High-value, beautifully formatted editorial newsletters that people actually look forward to reading in their inbox.",
+          "points": [
+            "Custom responsive email templates matching brand guidelines",
+            "Curated industry insights, stories, and educational tips",
+            "Clean typography optimized for mobile devices and dark mode"
+          ]
+        },
+        {
+          "title": "Automated Lifecycle Sequences",
+          "description": "Trigger-based email sequences that run automatically 24/7 whenever a subscriber takes a specific action.",
+          "points": [
+            "Welcome series introducing your story and value",
+            "Lead nurturing workflows educating prospective clients",
+            "Abandoned inquiry or abandoned cart recovery triggers",
+            "Post-purchase customer onboarding and feedback requests"
+          ]
+        },
+        {
+          "title": "Deliverability & Performance Tracking",
+          "description": "Rigorous technical configuration to protect your sender reputation and maximize inbox placement.",
+          "points": [
+            "DKIM, SPF, and DMARC technical alignment assistance",
+            "Subject line A/B testing and open rate optimization",
+            "Transparent tracking of opens, clicks, and conversion events"
+          ]
+        }
+      ],
+      "platformsAndTools": [
+        {
+          "name": "Klaviyo",
+          "category": "eCommerce Retention",
+          "description": "Advanced revenue attribution, predictive analytics, and dynamic product feeds."
+        },
+        {
+          "name": "ActiveCampaign / HubSpot",
+          "category": "B2B & Service CRM",
+          "description": "Complex branching logic, lead scoring, and sales rep deal triggers."
+        },
+        {
+          "name": "Mailchimp / Brevo",
+          "category": "Email Automation",
+          "description": "Clean broadcast management and dependable list hygiene."
+        },
+        {
+          "name": "Litmus & Email on Acid",
+          "category": "Deliverability QA",
+          "description": "Cross-client rendering testing across Apple Mail, Gmail, and Outlook."
+        }
+      ],
+      "process": [
+        {
+          "step": "01",
+          "title": "Deliverability & List Health Audit",
+          "description": "We inspect your current email domain settings, clean inactive subscribers, and establish baseline deliverability."
+        },
+        {
+          "step": "02",
+          "title": "Core Automation Flow Setup",
+          "description": "We write, design, and configure your foundational automated sequences (Welcome, Nurture, and Re-engagement)."
+        },
+        {
+          "step": "03",
+          "title": "Campaign Calendar Execution",
+          "description": "We draft and schedule weekly or bi-weekly newsletters and promotional broadcasts for ongoing engagement."
+        },
+        {
+          "step": "04",
+          "title": "Optimization & Segmentation",
+          "description": "We continuously prune cold contacts, test subject line angles, and segment recipients by behavioral interest."
+        }
+      ],
+      "businessBenefits": [
+        {
+          "title": "High-Margin Channel Ownership",
+          "description": "Unlike social platforms where algorithms restrict your reach, your email list is a direct channel you own 100%."
+        },
+        {
+          "title": "Hands-Off Automated Nurturing",
+          "description": "Educate new leads and turn curious visitors into buyers automatically while you sleep."
+        },
+        {
+          "title": "Increased Repeat Business",
+          "description": "Re-engage existing customers with timely recommendations, updates, and loyalty incentives."
+        }
+      ],
+      "portfolioPlaceholders": [
+        {
+          "title": "Multi-Step Customer Onboarding Sequence",
+          "label": "Concept Work / Sample Project",
+          "industry": "SaaS & Subscription Platform",
+          "strategy": "5-part automated welcome and feature activation sequence with dynamic personalization tokens based on user industry.",
+          "metrics": "Structured onboarding flow guiding users to key milestones within their first 14 days."
+        },
+        {
+          "title": "Premium Brand Editorial Newsletter",
+          "label": "Concept Work / Sample Project",
+          "industry": "Luxury Hospitality & Private Travel",
+          "strategy": "Minimalist bi-weekly destination dispatch focused on visual storytelling and exclusive curated itineraries.",
+          "metrics": "High open rates and elevated engagement through clean design and zero spam triggers."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do you prevent emails from landing in the spam folder?",
+          "answer": "We ensure technical domain verification protocols (SPF, DKIM, DMARC) are configured correctly, maintain healthy list hygiene by cleaning bounce addresses, avoid spam trigger language, and use clean, lightweight HTML code."
+        },
+        {
+          "question": "Can you migrate us from our current email platform to a better one?",
+          "answer": "Yes. We frequently help businesses migrate lists, templates, and automated workflows from older systems to modern platforms like Klaviyo, ActiveCampaign, or HubSpot without losing subscriber data."
+        },
+        {
+          "question": "How often should we send emails to our list?",
+          "answer": "It depends on your business model. For service businesses, 1–2 thoughtful newsletters per month are often ideal. For eCommerce brands, 1–2 weekly targeted campaigns balanced with automated trigger flows produce strong results without fatiguing subscribers."
+        }
+      ]
+    },
+    {
+      "id": "ai-automation",
+      "pageId": "service-ai-automation",
+      "title": "AI & Business Automation",
+      "shortDescription": "We simplify business operations by connecting tools, automating repetitive tasks and creating intelligent workflows.",
+      "badge": "Intelligent Systems",
+      "heroHeadline": "Automate Repetitive Workflows And Connect Your Core Business Tools.",
+      "heroSubheadline": "We build intelligent automations, smart CRM pipelines, and automated follow-up workflows so your team can focus on closing deals and serving clients.",
+      "image": "/src/assets/images/service_ai_automation_1793368525649.jpg",
+      "problemsSolved": [
+        {
+          "problem": "Manual Copy-Pasting Across Disconnected Tools",
+          "explanation": "Teams waste hours moving lead details manually from ad forms to spreadsheets, CRMs, and email software."
+        },
+        {
+          "problem": "Slow Lead Response Times (The 5-Minute Window)",
+          "explanation": "Leads contact multiple companies at once. Waiting hours or days to respond drastically slashes your conversion probability."
+        },
+        {
+          "problem": "Inconsistent Data & Human Entry Errors",
+          "explanation": "Manual tracking leads to mistyped phone numbers, missing follow-ups, and lost sales opportunities."
+        },
+        {
+          "problem": "Expensive Custom Software Headaches",
+          "explanation": "Traditional custom software takes months to build and costs a fortune. We build flexible, modular automations using proven platforms like n8n."
+        }
+      ],
+      "whatIsIncluded": [
+        {
+          "title": "AI Workflow Automation & Process Design",
+          "description": "Connecting your existing digital tools into seamless, automated pipelines that trigger without human intervention.",
+          "points": [
+            "End-to-end workflow architecture design",
+            "Cross-application data syncing and transformation",
+            "Document parsing, summary generation, and automatic filing"
+          ]
+        },
+        {
+          "title": "Lead Generation & CRM Automation",
+          "description": "Instant synchronization of inbound inquiries from Meta Ads, Google Ads, or website forms directly into your CRM.",
+          "points": [
+            "Instant lead qualification and dynamic lead scoring",
+            "Automated routing to designated sales reps or account managers",
+            "CRM pipeline stage updates (HubSpot, Pipedrive, Notion, Airtable)"
+          ]
+        },
+        {
+          "title": "Automated Follow-ups & Speed-to-Lead Systems",
+          "description": "Trigger immediate, personalized SMS or email acknowledgments within 60 seconds of an inquiry arriving.",
+          "points": [
+            "Instant notification to your sales team via Slack, Teams, or WhatsApp",
+            "Automated calendar booking link dispatch to prospects",
+            "Multi-step follow-up reminders for unanswered inquiries"
+          ]
+        },
+        {
+          "title": "n8n & Advanced App Integrations",
+          "description": "Custom, private, cost-effective automation pipelines built using open and flexible workflow platforms like n8n.",
+          "points": [
+            "Self-hosted or cloud n8n workflow deployment",
+            "Webhook integrations and custom API connector endpoints",
+            "Automated reporting generation and Slack/Email summary notifications"
+          ]
+        },
+        {
+          "title": "Intelligent AI Chatbots & Knowledge Assistants",
+          "description": "Smart conversational assistants trained on your company FAQs, product catalogs, and service documents to answer customer questions 24/7.",
+          "points": [
+            "Website chat widgets trained on your private knowledge base",
+            "Pre-qualification of customer budget and project timeline",
+            "Seamless handoff to human representatives for complex questions"
+          ]
+        }
+      ],
+      "platformsAndTools": [
+        {
+          "name": "n8n Workflow Automation",
+          "category": "Workflow Engine",
+          "description": "Modern, highly flexible node-based automation platform for complex enterprise data flows."
+        },
+        {
+          "name": "Make & Zapier",
+          "category": "Quick Integrations",
+          "description": "Rapid connectivity across 5,000+ commercial business web applications."
+        },
+        {
+          "name": "HubSpot / Pipedrive / Airtable",
+          "category": "CRM & Database",
+          "description": "Centralized single source of truth for leads, deals, and customer touchpoints."
+        },
+        {
+          "name": "OpenAI & Claude API Nodes",
+          "category": "Intelligence Nodes",
+          "description": "Intelligent text summarization, language translation, and categorization."
+        }
+      ],
+      "process": [
+        {
+          "step": "01",
+          "title": "Workflow Bottleneck Audit",
+          "description": "We map out where your team spends repetitive manual hours each week and identify high-ROI automation targets."
+        },
+        {
+          "step": "02",
+          "title": "System Blueprint & Logic Design",
+          "description": "We design clear step-by-step logic diagrams so you can see exactly how data moves between your tools."
+        },
+        {
+          "step": "03",
+          "title": "Build & Rigorous Edge-Case Testing",
+          "description": "We build the workflows in n8n or Make, testing error handling, fallback alerts, and data formatting."
+        },
+        {
+          "step": "04",
+          "title": "Deployment & Team Walkthrough",
+          "description": "We launch the automations live and provide simple documentation so your team knows how the system operates."
+        }
+      ],
+      "businessBenefits": [
+        {
+          "title": "Under-60-Second Lead Response",
+          "description": "Acknowledge inquiries instantly to dramatically increase appointment booking and close rates."
+        },
+        {
+          "title": "Eliminate Repetitive Busywork",
+          "description": "Save 10–20 hours of manual data entry per employee every week so your team focuses on high-value clients."
+        },
+        {
+          "title": "Scalable Operations Without Bloat",
+          "description": "Handle 5x more customer inquiries and transactions without immediately needing to double your administrative headcount."
+        }
+      ],
+      "portfolioPlaceholders": [
+        {
+          "title": "Automated Lead Qualification & CRM Pipeline",
+          "label": "Concept Work / Sample Project",
+          "industry": "Commercial Real Estate & Advisory",
+          "strategy": "Integrated Meta Ad leads through n8n with instant SMS verification, CRM deal creation, and auto-generated investor intake folders.",
+          "metrics": "Sub-60-second inquiry response pipeline with automated data synchronization into Airtable."
+        },
+        {
+          "title": "Intelligent Client Onboarding Dispatcher",
+          "label": "Concept Work / Sample Project",
+          "industry": "Consulting & Legal Services",
+          "strategy": "Automated contract signature trigger that spawns client Slack channels, sends welcome kits, and prepares billing invoices.",
+          "metrics": "Zero manual administrative touchpoints required between client payment and project kickoff."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Do we need a technical background or programmer on staff to use these automations?",
+          "answer": "Not at all. We build automations designed specifically for non-technical business owners and teams. We handle the setup, test every connection, and deliver simple dashboards or notifications (like a clear message in your email or Slack) that require no coding."
+        },
+        {
+          "question": "What is n8n and why do you use it?",
+          "answer": "n8n is a powerful modern workflow automation tool. Unlike older platforms that charge exorbitant fees per task, n8n provides superior privacy, handles complex logic, and can be hosted securely while keeping running costs predictable."
+        },
+        {
+          "question": "Can automations integrate with our existing CRM and email system?",
+          "answer": "Yes. We connect with nearly all modern platforms including HubSpot, Pipedrive, Salesforce, Google Workspace, Slack, Notion, Airtable, Stripe, Meta, and Shopify."
+        },
+        {
+          "question": "What happens if a tool goes down or an error occurs in the automation?",
+          "answer": "We build comprehensive error-handling routines into every workflow. If an API temporarily fails, the system automatically retries and sends an alert with error details so nothing is silently lost."
+        }
+      ]
+    }
+  ],
+  "pricing": {
+    "paidAdsPlatforms": [
+      {
+        "id": "meta-ads",
+        "name": "Meta Ads Management",
+        "category": "Paid Advertising",
+        "shortDescription": "Targeted visual and video advertising across Facebook and Instagram feeds, Stories, and Reels.",
+        "importantNote": "Advertising spend is paid directly to Meta and is not included in the management fee. No guaranteed sales or ROAS.",
+        "tiers": {
+          "Starter": {
+            "name": "Starter",
+            "price": 399,
+            "priceDisplay": "$399",
+            "campaignLimits": "Up to 2 active campaigns / 4 ad sets",
+            "idealFor": "Small businesses testing Meta ads or targeting a single core audience.",
+            "deliverables": [
+              "Up to 2 active campaigns & 4 ad sets",
+              "Audience research & custom demographic targeting",
+              "Pixel & conversion tracking health check",
+              "A/B testing of headlines and copy",
+              "Bi-weekly bid & audience optimization",
+              "Monthly performance report & dashboard access"
+            ]
+          },
+          "Growth": {
+            "name": "Growth",
+            "price": 699,
+            "priceDisplay": "$699",
+            "campaignLimits": "Up to 4 active campaigns / 8 ad sets",
+            "idealFor": "Growing businesses running prospecting and retargeting simultaneously.",
+            "deliverables": [
+              "Up to 4 active campaigns & 8 ad sets",
+              "Full-funnel architecture (Prospecting + Dynamic Retargeting)",
+              "Custom and lookalike audience segmentation",
+              "Creative iteration coordination (up to 4 ad variants/mo)",
+              "Weekly bid, placement & budget optimization",
+              "Bi-weekly performance updates & monthly strategy review"
+            ]
+          },
+          "Scale": {
+            "name": "Scale",
+            "price": 999,
+            "priceDisplay": "$999",
+            "campaignLimits": "Up to 8 active campaigns / 16 ad sets",
+            "idealFor": "Established brands scaling ad spend across multiple product lines or territories.",
+            "deliverables": [
+              "Up to 8 active campaigns & 16 ad sets",
+              "Multi-territory and multi-currency campaign routing",
+              "Advantage+ catalog and dynamic creative optimization",
+              "Continuous creative angle testing & hook rotation",
+              "Twice-weekly performance calibration",
+              "Weekly strategy calls & live attribution reporting"
+            ]
+          },
+          "Custom": {
+            "name": "Custom",
+            "price": null,
+            "priceDisplay": "Custom Quote",
+            "campaignLimits": "Unlimited customized campaigns",
+            "idealFor": "High-spend global brands requiring bespoke account management and custom attribution.",
+            "deliverables": [
+              "Unlimited campaign architecture & international rollout",
+              "Bespoke creative testing matrices",
+              "Dedicated senior media buyer & weekly executive reviews",
+              "First-party data warehouse and server-side CAPI integration",
+              "Priority Slack channel access with 4-hour response SLA"
+            ]
+          }
+        }
+      },
+      {
+        "id": "google-ads",
+        "name": "Google Ads Management",
+        "category": "Paid Advertising",
+        "shortDescription": "Capture high-intent search demand on Google Search, Performance Max, and YouTube.",
+        "importantNote": "Ad spend is paid directly to Google. Management covers setup, negative keywords, bidding, and optimization.",
+        "tiers": {
+          "Starter": {
+            "name": "Starter",
+            "price": 449,
+            "priceDisplay": "$449",
+            "campaignLimits": "Up to 2 Search or PMax campaigns",
+            "idealFor": "Local or focused businesses capturing search intent on priority keywords.",
+            "deliverables": [
+              "Up to 2 active Search or Performance Max campaigns",
+              "Keyword research (up to 30 high-intent terms)",
+              "Negative keyword hygiene & search term pruning",
+              "Responsive search ad copywriting & asset extensions",
+              "Bi-weekly bid and conversion adjustments",
+              "Monthly Google Ads performance reporting"
+            ]
+          },
+          "Growth": {
+            "name": "Growth",
+            "price": 749,
+            "priceDisplay": "$749",
+            "campaignLimits": "Up to 4 campaigns (Search + PMax + Retargeting)",
+            "idealFor": "Businesses scaling search reach and deploying automated asset groups.",
+            "deliverables": [
+              "Up to 4 active campaigns across Search, Display & PMax",
+              "Comprehensive keyword clustering & match-type structuring",
+              "Asset group creative testing & audience signal tuning",
+              "Landing page conversion path alignment review",
+              "Weekly negative match filtering & smart bidding calibration",
+              "Bi-weekly status summaries & monthly strategy session"
+            ]
+          },
+          "Scale": {
+            "name": "Scale",
+            "price": 1099,
+            "priceDisplay": "$1,099",
+            "campaignLimits": "Up to 8 campaigns across Search, Shopping & YouTube",
+            "idealFor": "Multi-market eCommerce or high-volume service providers.",
+            "deliverables": [
+              "Up to 8 campaigns (Search, Shopping, PMax, YouTube video)",
+              "Multi-country and regional geo-targeting structures",
+              "Continuous search term expansion and competitor defense",
+              "Advanced conversion value bidding (tROAS/tCPA tuning)",
+              "Weekly proactive bid and channel budget reallocation",
+              "Executive monthly strategy deck & dedicated analyst"
+            ]
+          },
+          "Custom": {
+            "name": "Custom",
+            "price": null,
+            "priceDisplay": "Custom Quote",
+            "campaignLimits": "Bespoke multi-account structure",
+            "idealFor": "Enterprise accounts and large-scale international search portfolios.",
+            "deliverables": [
+              "Multi-account and franchise structures",
+              "Custom offline conversion tracking and CRM sync",
+              "Dedicated senior Google certified strategist",
+              "Executive reporting & cross-channel attribution"
+            ]
+          }
+        }
+      },
+      {
+        "id": "linkedin-ads",
+        "name": "LinkedIn Ads Management",
+        "category": "Paid Advertising",
+        "shortDescription": "Precision B2B targeting by job seniority, company size, and specific account lists.",
+        "importantNote": "LinkedIn ad spend is separate. Focuses on qualified corporate decision-makers and lead forms.",
+        "tiers": {
+          "Starter": {
+            "name": "Starter",
+            "price": 499,
+            "priceDisplay": "$499",
+            "campaignLimits": "Up to 2 active campaigns",
+            "idealFor": "B2B companies testing executive targeting or lead generation forms.",
+            "deliverables": [
+              "Up to 2 active Sponsored Content or Lead Gen campaigns",
+              "Demographic, industry, and job function targeting",
+              "Insight Tag and website conversion setup",
+              "A/B ad headline and intro text testing",
+              "Bi-weekly lead quality audit & bid monitoring",
+              "Monthly B2B inquiry reporting"
+            ]
+          },
+          "Growth": {
+            "name": "Growth",
+            "price": 799,
+            "priceDisplay": "$799",
+            "campaignLimits": "Up to 4 active campaigns",
+            "idealFor": "Consultancies, SaaS, and professional services targeting named accounts.",
+            "deliverables": [
+              "Up to 4 active campaigns (Single Image, Document & Video ads)",
+              "Account-Based Marketing (ABM) company list targeting",
+              "Native LinkedIn Lead Gen Forms with automated CRM push",
+              "Retargeting website visitors and previous ad engagers",
+              "Weekly audience refinement and bid optimization",
+              "Monthly B2B pipeline review"
+            ]
+          },
+          "Scale": {
+            "name": "Scale",
+            "price": 1199,
+            "priceDisplay": "$1,199",
+            "campaignLimits": "Up to 8 active campaigns",
+            "idealFor": "Enterprise B2B organizations running multi-tier global ABM campaigns.",
+            "deliverables": [
+              "Up to 8 campaigns across international territories",
+              "Tiered account lists (Tier 1 high-touch vs Tier 2 broad B2B)",
+              "Document ads, Thought Leader ads, and InMail sequences",
+              "Continuous creative angle rotation & persona testing",
+              "Weekly bid management & qualification feedback loop",
+              "Executive pipeline report & dedicated B2B strategist"
+            ]
+          },
+          "Custom": {
+            "name": "Custom",
+            "price": null,
+            "priceDisplay": "Custom Quote",
+            "campaignLimits": "Enterprise account-based infrastructure",
+            "idealFor": "Global corporate enterprises with complex multi-region buying committees.",
+            "deliverables": [
+              "High-touch enterprise ABM programs",
+              "Integration with Salesforce/HubSpot lifecycle stages",
+              "Custom creative copywriting for C-suite decision makers",
+              "Dedicated senior B2B growth director"
+            ]
+          }
+        }
+      },
+      {
+        "id": "tiktok-ads",
+        "name": "TikTok Ads Management",
+        "category": "Paid Advertising",
+        "shortDescription": "High-energy, native short-form video ads tailored for younger, fast-moving audiences.",
+        "importantNote": "Requires video assets (client-provided or via our Creative Production service). Ad spend separate.",
+        "tiers": {
+          "Starter": {
+            "name": "Starter",
+            "price": 399,
+            "priceDisplay": "$399",
+            "campaignLimits": "Up to 2 active in-feed campaigns",
+            "idealFor": "Brands exploring viral discovery and Gen Z/Millennial lifestyle reach.",
+            "deliverables": [
+              "Up to 2 active In-Feed ad campaigns",
+              "Interest, behavior, and hashtag audience clustering",
+              "TikTok Pixel event setup and catalog connection",
+              "Bi-weekly ad fatigue monitoring and bid checks",
+              "Monthly TikTok ads performance report"
+            ]
+          },
+          "Growth": {
+            "name": "Growth",
+            "price": 699,
+            "priceDisplay": "$699",
+            "campaignLimits": "Up to 4 active campaigns (Spark + In-Feed)",
+            "idealFor": "Consumer brands scaling short-form engagement and traffic.",
+            "deliverables": [
+              "Up to 4 active campaigns including Spark Ads and shopping ads",
+              "Custom audience lookalikes and video-view retargeting",
+              "Creative sound and hook testing recommendations",
+              "Weekly creative fatigue management and bid optimization",
+              "Bi-weekly status notes & monthly strategy review"
+            ]
+          },
+          "Scale": {
+            "name": "Scale",
+            "price": 999,
+            "priceDisplay": "$999",
+            "campaignLimits": "Up to 8 active campaigns",
+            "idealFor": "High-growth D2C brands driving continuous commercial volume.",
+            "deliverables": [
+              "Up to 8 active campaigns across multiple product categories",
+              "Rapid creative refresh cycling (handling weekly variant rotations)",
+              "Smart Performance Campaigns (SPC) optimization",
+              "Twice-weekly bid calibrations and audience scaling",
+              "Weekly video performance breakdown & creative briefings"
+            ]
+          },
+          "Custom": {
+            "name": "Custom",
+            "price": null,
+            "priceDisplay": "Custom Quote",
+            "campaignLimits": "Custom multi-market TikTok roadmap",
+            "idealFor": "Major consumer retail brands and international viral drops.",
+            "deliverables": [
+              "Multi-country TikTok strategy (US, UK, UAE, AU)",
+              "Creator and influencer Spark Ad integration",
+              "Dedicated short-form video media buyer",
+              "Priority support and creative strategy"
+            ]
+          }
+        }
+      },
+      {
+        "id": "snapchat-ads",
+        "name": "Snapchat Ads Management",
+        "category": "Paid Advertising",
+        "shortDescription": "Engaging full-screen vertical mobile video ads reaching active mobile shoppers.",
+        "importantNote": "Ad spend is paid directly to Snapchat. Vertical 9:16 mobile creative required.",
+        "tiers": {
+          "Starter": {
+            "name": "Starter",
+            "price": 399,
+            "priceDisplay": "$399",
+            "campaignLimits": "Up to 2 active Story/Single Video campaigns",
+            "idealFor": "Businesses targeting mobile-first consumers at cost-effective CPMs.",
+            "deliverables": [
+              "Up to 2 active vertical video campaigns",
+              "Lifestyle category and demographic targeting",
+              "Snap Pixel installation and purchase event mapping",
+              "Bi-weekly bid and delivery review",
+              "Monthly Snapchat campaign performance report"
+            ]
+          },
+          "Growth": {
+            "name": "Growth",
+            "price": 649,
+            "priceDisplay": "$649",
+            "campaignLimits": "Up to 4 active campaigns",
+            "idealFor": "Brands utilizing Story Ads, Collection Ads, and dynamic retargeting.",
+            "deliverables": [
+              "Up to 4 active campaigns across Story and In-Screen formats",
+              "Dynamic Product Ads (DPA) catalog setup",
+              "Custom audience retargeting for previous app or site visitors",
+              "Weekly optimization of swipe-up and conversion rates",
+              "Monthly performance review & creative recommendations"
+            ]
+          },
+          "Scale": {
+            "name": "Scale",
+            "price": 949,
+            "priceDisplay": "$949",
+            "campaignLimits": "Up to 8 active campaigns",
+            "idealFor": "Scale-stage eCommerce brands expanding reach in competitive regions.",
+            "deliverables": [
+              "Up to 8 active campaigns across international territories",
+              "Multi-product Collection ad testing",
+              "Continuous creative angle rotation",
+              "Twice-weekly bid optimization & goal tuning",
+              "Dedicated mobile ad strategist"
+            ]
+          },
+          "Custom": {
+            "name": "Custom",
+            "price": null,
+            "priceDisplay": "Custom Quote",
+            "campaignLimits": "Bespoke mobile campaign architecture",
+            "idealFor": "Large international apps, gaming, and lifestyle brands.",
+            "deliverables": [
+              "Bespoke Snapchat ad architecture",
+              "AR Lens / Filter campaign coordination",
+              "Dedicated performance account lead",
+              "Custom reporting & API attribution"
+            ]
+          }
+        }
+      }
+    ],
+    "creativeServicePricing": {
+      "id": "creative-production",
+      "name": "Creative & Content Production",
+      "category": "Creative & Content",
+      "shortDescription": "High-converting ad visuals, brand graphics, and short-form video assets.",
+      "importantNote": "Video editing uses client-provided footage. Filming, actors, paid stock assets and advanced production are charged separately.",
+      "tiers": {
+        "Starter": {
+          "name": "Starter",
+          "price": 299,
+          "priceDisplay": "$299",
+          "idealFor": "Small businesses needing regular static ad graphics and clean copy.",
+          "deliverables": [
+            "6 static graphic designs (social posts or ad visuals)",
+            "2 ad copy variations (headlines, body, and CTA)",
+            "Basic creative direction matching your brand guide",
+            "1 revision round per deliverable",
+            "Standard delivery formats (PNG, JPG, WebP)"
+          ]
+        },
+        "Growth": {
+          "name": "Growth",
+          "price": 499,
+          "priceDisplay": "$499",
+          "idealFor": "Active brands requiring a steady stream of graphics and short-form video edits.",
+          "deliverables": [
+            "10 graphic designs (static ads, carousels, or social posts)",
+            "4 short-form video edits (Reels/TikTok/Shorts, up to 60s each)",
+            "4 ad copy variations and caption sets",
+            "Strategic creative direction & angle recommendations",
+            "Up to 2 revision rounds per deliverable",
+            "Vertical 9:16, square 1:1, and 16:9 formats"
+          ]
+        },
+        "Scale": {
+          "name": "Scale",
+          "price": 799,
+          "priceDisplay": "$799",
+          "idealFor": "Aggressive advertisers testing multiple creative hooks to eliminate ad fatigue.",
+          "deliverables": [
+            "16 graphic designs across static ads and carousels",
+            "8 short-form video edits with kinetic captions and sound design",
+            "8 ad copy variations & hook testing matrices",
+            "Multiple creative concepts & monthly testing ideas",
+            "Up to 2 revision rounds per deliverable",
+            "Fast 48-hour turnarounds on active creative batches"
+          ]
+        },
+        "Custom": {
+          "name": "Custom",
+          "price": null,
+          "priceDisplay": "Custom Quote",
+          "idealFor": "High-volume content, advanced 3D motion, UGC coordination, and custom production.",
+          "deliverables": [
+            "High-volume content production (20+ videos / 30+ graphics)",
+            "UGC creator sourcing & coordination",
+            "Advanced motion graphics & 3D product renders",
+            "Custom scriptwriting & brand visual guidelines",
+            "Dedicated art director & video editing pod"
+          ]
+        }
+      }
+    },
+    "socialMediaPricing": {
+      "id": "social-media",
+      "name": "Social Media Management",
+      "category": "Social Media",
+      "shortDescription": "Consistent, authoritative organic presence that builds brand reputation.",
+      "importantNote": "Organic social media management does not include paid advertising. Ad spend and paid boosts are separate.",
+      "tiers": {
+        "Starter": {
+          "name": "Starter",
+          "price": 349,
+          "priceDisplay": "$349",
+          "idealFor": "Businesses establishing a clean, reliable presence on one primary network.",
+          "deliverables": [
+            "1 social media platform (e.g. LinkedIn or Instagram)",
+            "8 posts per month (2 posts per week)",
+            "Monthly content calendar planning",
+            "Basic branded graphics and caption writing",
+            "Scheduling and publishing",
+            "Monthly organic performance report"
+          ]
+        },
+        "Growth": {
+          "name": "Growth",
+          "price": 599,
+          "priceDisplay": "$599",
+          "idealFor": "Brands expanding organic reach across professional and visual platforms.",
+          "deliverables": [
+            "Up to 2 social media platforms (e.g. LinkedIn + Instagram)",
+            "12 posts per month (3 posts per week)",
+            "4 short-form videos formatted for Reels / TikTok",
+            "Monthly editorial content calendar for approval",
+            "Multi-channel scheduling and publishing",
+            "Basic engagement management (monitoring comments & mentions)",
+            "Monthly performance and audience growth report"
+          ]
+        },
+        "Scale": {
+          "name": "Scale",
+          "price": 899,
+          "priceDisplay": "$899",
+          "idealFor": "Established brands maintaining a dominant multi-network presence.",
+          "deliverables": [
+            "Up to 3 social media platforms (e.g. LinkedIn, Instagram, TikTok)",
+            "16 posts per month (4 posts per week)",
+            "8 short-form videos with captions and trend research",
+            "Comprehensive social media strategy & content pillars",
+            "Scheduling, publishing & hashtag optimization",
+            "Proactive community management & comment replies",
+            "Detailed monthly analytics review and next-month strategy"
+          ]
+        },
+        "Custom": {
+          "name": "Custom",
+          "price": null,
+          "priceDisplay": "Custom Quote",
+          "idealFor": "Global brands requiring daily posting, bilingual copy, and multi-network community care.",
+          "deliverables": [
+            "4+ social media platforms with daily publishing",
+            "High-volume short-form video curation",
+            "Executive personal branding for company leadership",
+            "24/7 community moderation and crisis response",
+            "Dedicated senior social media strategist"
+          ]
+        }
+      }
+    },
+    "emailMarketingPricing": {
+      "id": "email-marketing",
+      "name": "Email Marketing & Retention",
+      "category": "Email Marketing",
+      "shortDescription": "Direct customer communication that nurtures leads and drives repeat business.",
+      "importantNote": "Email marketing platform subscriptions (Klaviyo, Mailchimp, HubSpot) and sending fees are separate.",
+      "tiers": {
+        "Starter": {
+          "name": "Starter",
+          "price": 299,
+          "priceDisplay": "$299",
+          "idealFor": "Service businesses keeping in touch with clients through monthly newsletters.",
+          "deliverables": [
+            "2 email campaigns per month",
+            "Email copywriting with clear call-to-actions",
+            "Responsive newsletter design matching brand aesthetic",
+            "Campaign scheduling and list hygiene check",
+            "Basic performance report (opens, clicks, unsubscribe rates)"
+          ]
+        },
+        "Growth": {
+          "name": "Growth",
+          "price": 499,
+          "priceDisplay": "$499",
+          "idealFor": "Brands looking to engage subscribers weekly and automate their welcome journey.",
+          "deliverables": [
+            "4 email campaigns per month (weekly cadence)",
+            "Persuasive email copywriting and custom layout design",
+            "Audience segmentation (active vs lapsed subscribers)",
+            "1 foundational automation flow (Welcome Series or Lead Nurture)",
+            "Subject line A/B testing and open rate optimization",
+            "Monthly performance tracking & revenue attribution"
+          ]
+        },
+        "Scale": {
+          "name": "Scale",
+          "price": 799,
+          "priceDisplay": "$799",
+          "idealFor": "Fast-growing eCommerce or B2B companies maximizing customer lifetime value.",
+          "deliverables": [
+            "8 email campaigns per month (promotions, updates, editorial)",
+            "Up to 3 automated lifecycle flows (Welcome, Abandonment, Post-Purchase)",
+            "Advanced behavioral segmentation and customer tagging",
+            "Deliverability and technical domain health audits (SPF, DKIM, DMARC)",
+            "Lead nurturing funnels with personalized content tokens",
+            "Detailed monthly retention report & campaign review"
+          ]
+        },
+        "Custom": {
+          "name": "Custom",
+          "price": null,
+          "priceDisplay": "Custom Quote",
+          "idealFor": "Large subscriber databases requiring complex branching logic and dedicated deliverability.",
+          "deliverables": [
+            "High-volume list management (50k+ contacts)",
+            "Complex CRM lifecycle journeys & multi-channel SMS sync",
+            "Dedicated deliverability monitoring & IP warming",
+            "Custom template coding & dark-mode QA testing",
+            "Dedicated email strategist & copywriter"
+          ]
+        }
+      }
+    },
+    "automationPricing": {
+      "id": "ai-automation",
+      "name": "AI & Business Automation",
+      "category": "AI & Automation",
+      "isOneTime": true,
+      "shortDescription": "One-time setup projects connecting tools, automating tasks, and building smart workflows.",
+      "importantNote": "These are one-time project setup prices, not recurring monthly retainers. Third-party software/API costs separate. Optional maintenance from $99/mo.",
+      "tiers": {
+        "Starter": {
+          "name": "Starter",
+          "price": 499,
+          "priceDisplay": "$499 one-time",
+          "isOneTime": true,
+          "idealFor": "Eliminating a single painful manual task like moving form leads into a spreadsheet.",
+          "deliverables": [
+            "1 simple automated workflow (e.g. ad lead to Google Sheet or Slack)",
+            "Up to 2 connected software integrations",
+            "End-to-end trigger and output testing",
+            "Basic documentation & video walkthrough",
+            "Smooth project handover & 7-day post-launch support"
+          ]
+        },
+        "Growth": {
+          "name": "Growth",
+          "price": 999,
+          "priceDisplay": "$999 one-time",
+          "isOneTime": true,
+          "idealFor": "Connecting ad campaigns directly to your CRM with instant speed-to-lead follow-ups.",
+          "deliverables": [
+            "2–3 connected multi-step workflows",
+            "Up to 4 software integrations (e.g. Meta Ads + CRM + Slack + Email)",
+            "Lead routing, automated tagging, and instant prospect follow-up",
+            "Error handling logic and retry mechanisms",
+            "Comprehensive testing & documentation",
+            "Handover session & 14-day post-launch support"
+          ]
+        },
+        "Scale": {
+          "name": "Scale",
+          "price": 1999,
+          "priceDisplay": "$1,999 one-time",
+          "isOneTime": true,
+          "idealFor": "End-to-end client intake, automated proposals, and intelligent operations.",
+          "deliverables": [
+            "Multiple connected workflows across core business operations",
+            "AI features where suitable (text summarization, auto-categorization)",
+            "Multiple application integrations (CRM, billing, calendar, chat)",
+            "Advanced error alerts to team Slack or email",
+            "Full architecture documentation & video training library",
+            "Handover session & 30-day post-launch support"
+          ]
+        },
+        "Custom": {
+          "name": "Custom",
+          "price": null,
+          "priceDisplay": "Custom Quote",
+          "isOneTime": true,
+          "idealFor": "Complex CRM systems, custom APIs, private AI chatbots, and enterprise n8n clusters.",
+          "deliverables": [
+            "Self-hosted enterprise n8n cluster configuration",
+            "Custom webhooks, private APIs & database synchronizations",
+            "Intelligent conversational chatbots trained on company knowledge base",
+            "Multi-department operational automation",
+            "Custom ongoing maintenance SLA options available"
+          ]
+        }
+      }
+    },
+    "pricingFaqs": [
+      {
+        "question": "Can I purchase just one service?",
+        "answer": "Yes. You can choose any individual service package without purchasing a bundle. Many clients begin with a single service, such as Meta Ads, short-form video editing, or a specific automation setup."
+      },
+      {
+        "question": "Why should I choose a bundle?",
+        "answer": "Bundles combine related services and provide a 10% discount when the included deliverables match the equivalent individual packages. They also ensure your advertising, creative assets, social media, and email marketing work together seamlessly."
+      },
+      {
+        "question": "Can I create my own bundle?",
+        "answer": "Yes. Use Make Your Own Bundle to select the services and package tiers that suit your business. The calculator automatically calculates your custom monthly total and applies our 10% bundle discount."
+      },
+      {
+        "question": "Is advertising spend included?",
+        "answer": "No. Advertising spend is paid directly by the client to the relevant advertising platform (Meta, Google, LinkedIn, etc.). Our pricing covers professional campaign strategy, setup, monitoring, creative coordination, and continuous optimization."
+      },
+      {
+        "question": "Are software and third-party costs included?",
+        "answer": "No. External subscriptions, software licenses, API usage (such as OpenAI or third-party webhooks), and email sending platform subscriptions are separate unless specifically included in your customized quotation."
+      },
+      {
+        "question": "Can I upgrade my package later?",
+        "answer": "Yes. You can upgrade, adjust, or expand your services at any time as your business scales and your marketing needs evolve."
+      },
+      {
+        "question": "Do you guarantee results?",
+        "answer": "No agency can ethically guarantee specific advertising results, sales numbers, or ROAS, as conversions depend on market conditions, product-market fit, pricing, and sales closing. We guarantee disciplined strategy, rigorous testing, transparent reporting, and continuous data-informed optimization."
+      },
+      {
+        "question": "Is automation a monthly service?",
+        "answer": "Automation setup is generally a one-time project fee rather than a recurring retainer. Once built, tested, and handed over, you own the system. Optional ongoing workflow maintenance and monitoring can be quoted separately starting from $99/month."
+      }
+    ]
+  },
+  "bundles": {
+    "minServicesForDiscount": 2,
+    "discountPercentage": 10,
+    "readyMade": []
+  },
+  "blog": [
+    {
+      "id": "digital-marketing-basics-demystified",
+      "slug": "digital-marketing-for-business-owners",
+      "title": "Digital Marketing Demystified: A Practical Guide for Business Owners",
+      "category": "Digital Marketing Basics",
+      "readTime": "6 min read",
+      "publishedDate": "March 2026",
+      "excerpt": "Cut through confusing acronyms like CPC, ROAS, and CTR. Learn what actually matters when investing in digital growth for your business.",
+      "takeaways": [
+        "Focus on customer acquisition cost and lifetime value, not vanity metrics like likes or page views.",
+        "The biggest pitfall is running ads before having a clear offer and a working website.",
+        "Sustainable marketing combines direct customer capture with long-term brand credibility."
+      ],
+      "content": [
+        "Digital marketing often feels overwhelming because the industry loves complex acronyms. Agencies toss around terms like impressions, CPM, CTR, and attribution models, leaving business owners unsure of where their money is actually going.",
+        "At its core, digital marketing is simply showing the right message to people who are already looking for your solution, or introducing it to people who have the exact problem you solve.",
+        "Instead of worrying about every technical term, focus on three fundamental numbers: How much does it cost you to get a qualified lead? What percentage of those leads turn into paying customers? And what is the average value of a customer over their relationship with your business?",
+        "When you understand these three numbers, marketing stops feeling like an unpredictable expense and starts functioning as a predictable business system."
+      ]
+    },
+    {
+      "id": "paid-ads-budget-strategy",
+      "slug": "how-to-allocate-paid-advertising-budget",
+      "title": "How to Budget for Paid Advertising Without Burning Money",
+      "category": "Paid Advertising",
+      "readTime": "7 min read",
+      "publishedDate": "March 2026",
+      "excerpt": "Why hitting the \"Boost Post\" button wastes budget, and how structured testing protects your capital while discovering profitable audiences.",
+      "takeaways": [
+        "Boosting social media posts optimizes for casual interactions, not real sales or inquiries.",
+        "Allocate 70% of your budget to proven messages and 30% to structured testing.",
+        "Always install tracking pixels and verify conversion events before spending your first dollar."
+      ],
+      "content": [
+        "One of the most common mistakes small and medium business owners make is tapping the \"Boost Post\" button on Instagram or Facebook. While it gives you quick notifications and likes, it rarely produces sales conversations.",
+        "Platform algorithms give you exactly what you ask for. When you hit \"Boost\", you are asking the platform for people who tap heart icons. When you build a conversion campaign in Ads Manager, you are asking the algorithm for people who actively take action—such as submitting an inquiry or buying a product.",
+        "We recommend the 70/30 testing rule: commit 70% of your advertising budget to verified messaging and proven search keywords, and reserve 30% for continuous creative testing and audience discovery.",
+        "This balanced approach prevents ad fatigue while ensuring you never risk your entire marketing budget on unproven experiments."
+      ]
+    },
+    {
+      "id": "organic-social-vs-paid-ads",
+      "slug": "organic-social-media-vs-paid-advertising",
+      "title": "Organic Social vs. Paid Ads: Which Does Your Business Actually Need?",
+      "category": "Social Media Marketing",
+      "readTime": "5 min read",
+      "publishedDate": "March 2026",
+      "excerpt": "Understand why organic social media builds long-term reputation while paid ads drive direct, immediate customer inquiries.",
+      "takeaways": [
+        "Organic social media is your digital storefront; paid advertising is your distribution billboard.",
+        "Without organic presence, paid ad clicks will bounce because your business looks inactive or untrustworthy.",
+        "Without paid advertising, organic posts will only be seen by a small fraction of your existing followers."
+      ],
+      "content": [
+        "Many founders ask: \"If I am paying for ads, why do I still need to post on social media?\" The answer lies in consumer behavior.",
+        "When someone sees your paid ad for the first time, only a small percentage buy immediately. Most people will click your profile, check your recent posts, and read comments to verify that you are a legitimate, active company.",
+        "If your last post was from nine months ago, potential buyers hesitate. A polished, active organic presence provides the social proof required to convert paid traffic into paying clients.",
+        "Think of organic social media as your store’s interior design and customer service, while paid advertising is the highway billboard driving qualified traffic to your door."
+      ]
+    },
+    {
+      "id": "creative-fatigue-solution",
+      "slug": "solving-creative-fatigue-in-advertising",
+      "title": "Why Ad Creative Matters More Than Complex Targeting in 2026",
+      "category": "Creative & Content",
+      "readTime": "6 min read",
+      "publishedDate": "March 2026",
+      "excerpt": "Modern AI algorithms find your customers automatically—if your visual creative and hook communicate clearly within the first 3 seconds.",
+      "takeaways": [
+        "The visual ad creative is the new targeting: your video hook qualifies your audience before they ever click.",
+        "Creative fatigue occurs when the same audience sees your ad too many times without visual variety.",
+        "Test 3 distinct visual angles (Direct Demo, Customer Story, Educational Breakdown) for every product."
+      ],
+      "content": [
+        "Years ago, media buyers spent hours tweaking narrow interest tags and exclusion parameters. Today, advertising algorithms on Meta, Google, and TikTok have evolved dramatically.",
+        "The algorithm listens to what is in your video, reads the text on your graphic, and automatically shows it to users who find that topic interesting. In other words: your creative asset is your primary targeting tool.",
+        "If your video opens with a slow, generic logo animation, people swipe away within one second. But if your video opens with a direct visual answer to a common customer frustration, the right people immediately stop scrolling.",
+        "By producing regular batches of fresh video edits and design variations, businesses keep customer acquisition costs stable and avoid ad performance drop-offs."
+      ]
+    },
+    {
+      "id": "email-flows-every-business-needs",
+      "slug": "essential-automated-email-sequences",
+      "title": "The 3 Automated Email Flows Every Business Should Turn On Today",
+      "category": "Email Marketing",
+      "readTime": "5 min read",
+      "publishedDate": "March 2026",
+      "excerpt": "Turn dormant subscribers into repeat buyers with three automated email sequences that run quietly in the background 24/7.",
+      "takeaways": [
+        "A Welcome Series generates up to 4x higher open rates than standard promotional broadcasts.",
+        "Abandoned Inquiry or Cart sequences recover interested buyers who simply got distracted.",
+        "Post-purchase nurture flows turn one-time buyers into long-term brand advocates."
+      ],
+      "content": [
+        "Unlike social media networks where algorithms determine how many followers see your posts, your email list is a direct line of communication that you own 100%.",
+        "The true power of email marketing is not sending manual blast emails every Thursday afternoon; it is setting up automated trigger sequences that fire at the exact moment a prospect is paying attention.",
+        "Sequence 1: The Welcome Flow. When someone subscribes, introduce your founding philosophy, set expectations for your emails, and deliver immediate value.",
+        "Sequence 2: The Incomplete Inquiry Flow. If someone began filling out an inquiry or checkout and left, send a friendly, low-pressure follow-up within 4 hours addressing common questions.",
+        "Sequence 3: The Client Milestone Flow. Check in with clients 30 days after purchase to ensure they are delighted and request feedback or a referral."
+      ]
+    },
+    {
+      "id": "ai-automation-for-busy-teams",
+      "slug": "practical-ai-automation-for-busy-founders",
+      "title": "Practical AI Automation: How Small Teams Compete With Big Enterprises",
+      "category": "AI & Automation",
+      "readTime": "7 min read",
+      "publishedDate": "March 2026",
+      "excerpt": "You do not need a million-dollar software budget to automate your operations. Learn how modern tools like n8n eliminate repetitive busywork.",
+      "takeaways": [
+        "The 5-minute lead rule: responding to inquiries within 5 minutes increases conversion rates by up to 391%.",
+        "Automate repetitive data transfers between ad platforms, CRMs, and internal team chat.",
+        "Intelligent workflows free your human team to focus on relationship-building and strategic sales."
+      ],
+      "content": [
+        "When most business owners hear the term \"AI\", they imagine conversational chatbots or science fiction. But the most valuable application of AI today is much simpler: connecting your everyday tools so repetitive manual work happens automatically.",
+        "Consider the typical customer inquiry journey: someone submits a form on your website. Someone on your team has to see the notification email, open the CRM, type in their contact information, draft a response, and send an invite link. By the time this happens, 4 to 8 hours have passed.",
+        "With modern workflow automation using tools like n8n or Make, that entire sequence happens in 15 seconds. The lead is verified, added to your CRM, assigned to the correct rep, and sent an instant calendar link.",
+        "This eliminates human error, speeds up sales response times, and saves hundreds of hours of administrative labor every month."
+      ]
+    },
+    {
+      "id": "sustainable-growth-principles",
+      "slug": "sustainable-business-growth-framework",
+      "title": "Why Sustainable Growth Beats Vanity Metrics Every Time",
+      "category": "Business Growth",
+      "readTime": "6 min read",
+      "publishedDate": "March 2026",
+      "excerpt": "A strategic look at how sustainable businesses align their offer, advertising channels, and operational systems for long-term health.",
+      "takeaways": [
+        "Growth is not just more traffic; it is improving the conversion efficiency of every step in your funnel.",
+        "A great marketing campaign will expose weaknesses in your fulfillment faster than anything else.",
+        "Build your marketing engine around clear customer unit economics and sustainable margins."
+      ],
+      "content": [
+        "Too many marketing agencies promise overnight explosions in revenue. The reality is that rapid spikes in traffic without operational infrastructure often break businesses rather than build them.",
+        "Sustainable growth is methodical. It begins with understanding your core customer economics: what you can afford to spend to acquire a customer, how efficiently your sales team closes deals, and how effectively your operations team delivers on promises.",
+        "When your advertising, creative messaging, and operational workflows are connected, you create a compounding flywheel. Each marketing cycle produces reliable data that informs the next stage of growth.",
+        "At Telca Marketing, this is our core philosophy: Your Business. Your Goals. Our Strategy."
+      ]
+    }
+  ],
+  "settings": {
+    "agencyName": "Telca Marketing",
+    "tagline": "Turning Marketing Into Measurable Growth.",
+    "mission": "We help businesses attract the right audience, generate quality leads, increase sales and improve marketing operations through strategic advertising, creative content and intelligent automation.",
+    "contactEmail": "inquiries@telcamarketing.com",
+    "phone": "+1 (800) 555-TELCA",
+    "address": "International Growth Hubs: New York · London · Dubai · Sydney",
+    "operatingWindows": {
+      "North America (EST/PST)": "08:00 – 20:00 EST",
+      "United Kingdom (GMT/BST)": "08:00 – 19:00 GMT",
+      "UAE / Middle East (GST)": "09:00 – 18:00 GST",
+      "Australia (AEST/AWST)": "08:00 – 18:00 AEST"
+    },
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/company/telca-marketing",
+      "twitter": "https://twitter.com/telcamarketing",
+      "instagram": "https://instagram.com/telcamarketing"
+    },
+    "footerNotice": "Telca Marketing is a registered performance marketing and growth agency. Advertising spend is billed directly by ad platforms and is separate from agency management fees. We adhere to transparent reporting and ethical growth practices."
+  },
+  "activityLog": [
+    {
+      "id": "audit_1793434336393_d1za",
+      "action": "Pricing Configured",
+      "adminEmail": "uzairofficials001@gmail.com",
+      "details": "Global tier pricing and bundle discount rules updated",
+      "timestamp": "2026-10-31T08:12:16.393Z"
+    },
+    {
+      "id": "audit_1793434330995_5qzz",
+      "action": "Pricing Configured",
+      "adminEmail": "uzairofficials001@gmail.com",
+      "details": "Global tier pricing and bundle discount rules updated",
+      "timestamp": "2026-10-31T08:12:10.995Z"
+    },
+    {
+      "id": "audit_1793434320171_xj73",
+      "action": "User Registered",
+      "adminEmail": "client@testfirm.com",
+      "details": "New client account registered: client@testfirm.com",
+      "timestamp": "2026-10-31T08:12:00.171Z"
+    },
+    {
+      "id": "act_1793372944029",
+      "action": "Password Reset Requested",
+      "details": "Reset token generated for admin@telcamarketing.com",
+      "timestamp": "2026-10-30T15:09:04.029Z"
+    },
+    {
+      "id": "act_1793372934277",
+      "action": "User Logged In",
+      "details": "Session authenticated for admin@telcamarketing.com (admin)",
+      "timestamp": "2026-10-30T15:08:54.277Z"
+    },
+    {
+      "id": "act_1793372927257",
+      "action": "User Logged In",
+      "details": "Session authenticated for admin@telcamarketing.com (admin)",
+      "timestamp": "2026-10-30T15:08:47.257Z"
+    },
+    {
+      "id": "act_1793372919919",
+      "action": "Enquiry Received",
+      "details": "Custom Bundle Proposal submitted by Test Client (client@globalenterprise.com) [TM-234414]",
+      "timestamp": "2026-10-30T15:08:39.919Z"
+    },
+    {
+      "id": "act_1",
+      "action": "System Initialized",
+      "details": "Telca Marketing database engine bootstrapped with RBAC and secure authentication.",
+      "timestamp": "2026-10-30T15:07:25.072Z"
+    }
+  ],
+  "legalPages": [
+    {
+      "id": "legal-privacy",
+      "slug": "privacy-policy",
+      "title": "Privacy Policy",
+      "category": "Data Privacy & Protection",
+      "effectiveDate": "2025-01-01",
+      "lastUpdated": "2026-10-15",
+      "version": "2.1",
+      "isPublished": true,
+      "requiresLegalReview": true,
+      "content": "At Telca Marketing (\"we,\" \"our,\" or \"us\"), we respect your privacy and are committed to protecting the personal information you share with us. This Privacy Policy explains our data collection, usage, and retention practices for clients, prospective partners, and website visitors across international jurisdictions including the United States, United Kingdom, European Union, United Arab Emirates, and Australia.\n\n### 1. Information We Collect\nWe collect information you provide directly through our contact forms, custom bundle calculator, consultation bookings, and user account portal. This includes:\n- Full name, business email address, company name, telephone number, and website URL.\n- Performance goals, advertising budgets, target market preferences, and project requirements.\n- Account credentials securely encrypted via cryptographic one-way hashing.\n\n### 2. How We Use Your Information\nWe use your data solely for legitimate business communications, delivering advertising and growth consulting services, processing service agreements, and optimizing platform performance.\n\n### 3. Data Protection & International Transfers\nWe do not sell, rent, or trade your personal information. Data is stored on secure, encrypted infrastructure with role-based access control. International data transfers comply with standard contractual safeguards."
+    },
+    {
+      "id": "legal-terms",
+      "slug": "terms-and-conditions",
+      "title": "Terms and Conditions",
+      "category": "Commercial Agreements",
+      "effectiveDate": "2025-01-01",
+      "lastUpdated": "2026-10-15",
+      "version": "2.0",
+      "isPublished": true,
+      "requiresLegalReview": true,
+      "content": "These Terms and Conditions govern your access to and use of Telca Marketing's digital platform, consulting services, performance management scopes, and marketing automation systems.\n\n### 1. Scope of Services\nTelca Marketing provides professional marketing consulting, multi-channel media management, creative production, and workflow automation. All client engagements are formally governed by an executed Statement of Work (SOW) defining specific deliverables and timelines.\n\n### 2. Media Spend Ownership & Ad Accounts\nClient ad accounts (Meta, Google, LinkedIn, TikTok) remain 100% the property of the client. Ad spend is billed directly by platforms to client payment instruments and is separate from Telca Marketing agency retainers or project fees.\n\n### 3. No Speculative Guarantees\nWhile Telca Marketing employs rigorous performance engineering and quantitative optimization, commercial outcomes depend on broader market variables, pricing, and fulfillment. We do not provide unethical speculative sales guarantees."
+    },
+    {
+      "id": "legal-cookies",
+      "slug": "cookie-policy",
+      "title": "Cookie Policy",
+      "category": "Web Tracking & Consent",
+      "effectiveDate": "2025-01-01",
+      "lastUpdated": "2026-10-15",
+      "version": "1.4",
+      "isPublished": true,
+      "requiresLegalReview": false,
+      "content": "This Cookie Policy explains how Telca Marketing uses essential, functional, and performance cookies on our website.\n\n### 1. Essential Cookies\nNecessary for core security, session token persistence, and authenticated navigation. These cannot be disabled.\n\n### 2. First-Party Analytics Cookies\nWe utilize privacy-preserving, first-party aggregated analytics to evaluate popular service guides and improve site responsiveness without selling behavioral data to third-party ad brokers."
+    },
+    {
+      "id": "legal-refund",
+      "slug": "refund-and-cancellation",
+      "title": "Refund and Cancellation Policy",
+      "category": "Financial Policies",
+      "effectiveDate": "2025-01-01",
+      "lastUpdated": "2026-10-15",
+      "version": "1.2",
+      "isPublished": true,
+      "requiresLegalReview": true,
+      "content": "Our commitment is transparent and professional agency partnership. Monthly performance management retainers require 30 calendar days written notice prior to the upcoming billing cycle for cancellation. Custom automation setup projects are delivered under milestone approvals; completed development milestones are non-refundable."
+    },
+    {
+      "id": "legal-disclaimer",
+      "slug": "disclaimer",
+      "title": "Performance & Results Disclaimer",
+      "category": "Agency Disclaimers",
+      "effectiveDate": "2025-01-01",
+      "lastUpdated": "2026-10-15",
+      "version": "1.1",
+      "isPublished": true,
+      "requiresLegalReview": true,
+      "content": "All case studies, performance metrics, and workflow diagrams presented on this website reflect either historical anonymized client outcomes or structured performance concepts. Past performance in digital marketing does not guarantee identical future results in different industries or market conditions."
+    }
+  ],
+  "mediaLibrary": [
+    {
+      "id": "media_1",
+      "name": "Paid Advertising Command Center",
+      "url": "/src/assets/images/service_performance_ads_1793368524817.jpg",
+      "category": "service",
+      "altText": "Telca Marketing paid media performance analytics dashboard and campaign management interface",
+      "dimensions": "1920x1080",
+      "fileSize": "410 KB",
+      "usedIn": [
+        "service-paid-advertising",
+        "pricing"
+      ],
+      "uploadedAt": "2026-10-25T12:00:00Z"
+    },
+    {
+      "id": "media_2",
+      "name": "Creative & Content Production Studio",
+      "url": "/src/assets/images/service_creative_production_1793368525972.jpg",
+      "category": "service",
+      "altText": "Video editing, motion graphics, and graphic design workspace for direct-response marketing",
+      "dimensions": "1920x1080",
+      "fileSize": "385 KB",
+      "usedIn": [
+        "service-creative-production",
+        "work"
+      ],
+      "uploadedAt": "2026-10-25T12:00:00Z"
+    },
+    {
+      "id": "media_3",
+      "name": "Social Media Management Workspace",
+      "url": "/src/assets/images/service_social_media_1793433660938.jpg",
+      "category": "service",
+      "altText": "Multi-channel social editorial calendar and community engagement management dashboard",
+      "dimensions": "1920x1080",
+      "fileSize": "440 KB",
+      "usedIn": [
+        "service-social-media",
+        "work"
+      ],
+      "uploadedAt": "2026-10-31T01:00:00Z"
+    },
+    {
+      "id": "media_4",
+      "name": "Email Marketing & Retention Canvas",
+      "url": "/src/assets/images/service_email_marketing_1793433673325.jpg",
+      "category": "service",
+      "altText": "Automated email sequence workflow builder, newsletter design, and deliverability analytics",
+      "dimensions": "1920x1080",
+      "fileSize": "425 KB",
+      "usedIn": [
+        "service-email-marketing",
+        "work"
+      ],
+      "uploadedAt": "2026-10-31T01:01:00Z"
+    },
+    {
+      "id": "media_5",
+      "name": "AI & Business Automation Pipeline",
+      "url": "/src/assets/images/service_ai_automation_1793368525649.jpg",
+      "category": "service",
+      "altText": "Connected business workflow orchestration, CRM synchronization, and automated lead routing",
+      "dimensions": "1920x1080",
+      "fileSize": "495 KB",
+      "usedIn": [
+        "service-ai-automation",
+        "work"
+      ],
+      "uploadedAt": "2026-10-25T12:00:00Z"
+    },
+    {
+      "id": "media_6",
+      "name": "Agency Global Growth Architecture",
+      "url": "/src/assets/images/hero_marketing_growth_1793368523521.jpg",
+      "category": "hero",
+      "altText": "Telca Marketing international performance and digital growth architecture board",
+      "dimensions": "1920x1080",
+      "fileSize": "512 KB",
+      "usedIn": [
+        "home"
+      ],
+      "uploadedAt": "2026-10-25T12:00:00Z"
+    },
+    {
+      "id": "media_7",
+      "name": "Executive Case Study Dashboard",
+      "url": "/src/assets/images/portfolio_growth_case_study_1793433686566.jpg",
+      "category": "case_study",
+      "altText": "Multi-channel conversion funnel analytics and attribution modeling case study setup",
+      "dimensions": "1920x1080",
+      "fileSize": "460 KB",
+      "usedIn": [
+        "work"
+      ],
+      "uploadedAt": "2026-10-31T01:01:30Z"
+    },
+    {
+      "id": "media_8",
+      "name": "Senior Marketing Architects Collaboration",
+      "url": "/src/assets/images/about_agency_strategy_1793433704801.jpg",
+      "category": "general",
+      "altText": "Telca Marketing senior strategists collaborating on international growth roadmaps",
+      "dimensions": "1920x1080",
+      "fileSize": "475 KB",
+      "usedIn": [
+        "about"
+      ],
+      "uploadedAt": "2026-10-31T01:02:00Z"
+    }
+  ],
+  "pages": [
+    {
+      "id": "page_home",
+      "title": "Homepage",
+      "slug": "home",
+      "seoTitle": "Telca Marketing — Performance & Digital Growth Agency",
+      "seoDescription": "Turning marketing into measurable growth. We help international businesses attract the right audience, generate quality leads, and scale through paid ads and automation.",
+      "heroHeadline": "Turning Marketing Into Measurable Growth.",
+      "heroSubheadline": "We help businesses attract the right audience, generate quality leads, increase sales and improve their marketing operations through strategic advertising, creative content and intelligent automation.",
+      "isPublished": true,
+      "lastModified": "2026-10-31T08:11:40.444Z"
+    },
+    {
+      "id": "page_pricing",
+      "title": "Pricing & Bundles",
+      "slug": "pricing",
+      "seoTitle": "Transparent Digital Marketing Packages & Bundles | Telca Marketing",
+      "seoDescription": "Explore clear tier pricing for Meta Ads, Google Ads, Creative Production, Social Media, Email, and Custom Growth Bundles with a 10% discount on 2+ services.",
+      "heroHeadline": "The Right Marketing Support for Your Business.",
+      "heroSubheadline": "Choose the services you need, explore our ready-made growth bundles or build your own package. Professional marketing support with clear pricing and flexible options.",
+      "isPublished": true,
+      "lastModified": "2026-10-31T08:11:40.444Z"
+    },
+    {
+      "id": "page_about",
+      "title": "About Us",
+      "slug": "about",
+      "seoTitle": "About Telca Marketing — International Performance Growth Agency",
+      "seoDescription": "Your Business. Your Goals. Our Strategy. Discover our philosophy, strategic operating hubs, and performance methodology.",
+      "heroHeadline": "Your Growth Is Our Focus.",
+      "heroSubheadline": "A premium performance marketing agency built to serve forward-thinking businesses across the US, UK, UAE, Australia, and global markets.",
+      "isPublished": true,
+      "lastModified": "2026-10-31T08:11:40.444Z"
+    },
+    {
+      "id": "page_work",
+      "title": "Our Work & Case Studies",
+      "slug": "work",
+      "seoTitle": "Performance Case Studies & Client Results | Telca Marketing",
+      "seoDescription": "Explore real performance frameworks, multi-channel advertising architectures, and creative iterations across consumer and B2B sectors.",
+      "heroHeadline": "Measurable Work. Strategic Execution.",
+      "heroSubheadline": "Explore how our performance marketing, creative assets, and workflow automations drive tangible business outcomes for our international clients.",
+      "isPublished": true,
+      "lastModified": "2026-10-31T08:11:40.444Z"
+    },
+    {
+      "id": "page_insights",
+      "title": "Insights & Knowledge",
+      "slug": "insights",
+      "seoTitle": "Performance Marketing Insights & Strategy Guides | Telca Marketing",
+      "seoDescription": "Practical guides on paid media buying, ad creative testing, email lifecycle automation, and attribution hygiene.",
+      "heroHeadline": "Strategic Perspectives on Performance & Growth.",
+      "heroSubheadline": "Practical analysis, operational frameworks, and marketing insights written by senior performance practitioners.",
+      "isPublished": true,
+      "lastModified": "2026-10-31T08:11:40.444Z"
+    },
+    {
+      "id": "page_contact",
+      "title": "Contact & Consultations",
+      "slug": "contact",
+      "seoTitle": "Contact Telca Marketing — Schedule an Inbound Strategy Call",
+      "seoDescription": "Start a conversation about your marketing goals. Response within one business day across our US, UK, UAE, and Australia desks.",
+      "heroHeadline": "Let’s Discuss Your Growth Strategy.",
+      "heroSubheadline": "Schedule a discovery session with a senior marketing strategist or send an inquiry regarding our services and custom bundles.",
+      "isPublished": true,
+      "lastModified": "2026-10-31T08:11:40.444Z"
+    }
+  ],
+  "portfolio": [
+    {
+      "id": "case-paid-advertising-d2c",
+      "title": "International Direct-to-Consumer Campaign Architecture",
+      "clientPlaceholder": "Modern Living & Essentials (Sample Concept)",
+      "industry": "Consumer Goods / E-Commerce",
+      "category": "Paid Advertising",
+      "challenge": "High cost per acquisition and fragmented campaign management across US and UK regional storefronts.",
+      "strategy": "Consolidated ad structure using Meta Advantage+ shopping campaigns paired with Google Search brand protection and non-brand intent capture.",
+      "servicesProvided": [
+        "Meta Ads (Facebook & Instagram)",
+        "Google Search & PMax Ads",
+        "Multi-currency UTM tracking",
+        "Creative variant testing"
+      ],
+      "measurableResult": "Established a disciplined CPA testing benchmark across 6 primary creative hooks with multi-touch attribution.",
+      "summary": "A structured international performance framework testing localized ad copy, dynamic product feeds, and retargeting cadence.",
+      "isConceptWork": true,
+      "image": "/src/assets/images/portfolio_growth_case_study_1793433686566.jpg",
+      "keyOutputs": [
+        "12 localized ad angle variants tested",
+        "First-party pixel and GA4 event tracking setup",
+        "Daily bid pacing and negative keyword hygiene protocol"
+      ]
+    },
+    {
+      "id": "case-graphic-brand-identity",
+      "title": "B2B Corporate Identity & Marketing Collateral System",
+      "clientPlaceholder": "Vanguard Industrial Advisory (Sample Concept)",
+      "industry": "Corporate Advisory & B2B",
+      "category": "Graphic Design",
+      "challenge": "Disjointed presentation decks, outdated whitepaper typography, and inconsistent corporate branding across sales collateral.",
+      "strategy": "Developed a cohesive design system with modular slide templates, typographic hierarchies, and high-impact digital report layouts.",
+      "servicesProvided": [
+        "Graphic Design",
+        "Pitch Deck Design",
+        "Digital Brochure & One-Pagers",
+        "Brand Style Guide"
+      ],
+      "measurableResult": "Unified visual standard across 40+ sales and client presentation assets deployed across international divisions.",
+      "summary": "Complete brand collateral modernization aligning executive documents with top-tier international consulting standards.",
+      "isConceptWork": true,
+      "image": "/src/assets/images/service_creative_production_1793368525972.jpg",
+      "keyOutputs": [
+        "Modular 30-slide pitch system in Figma and PowerPoint",
+        "Executive whitepaper and case study editorial templates",
+        "Standardized color system and accessibility-checked contrast guides"
+      ]
+    },
+    {
+      "id": "case-video-editing-shorts",
+      "title": "Short-Form Product Video & Motion Ad Series",
+      "clientPlaceholder": "Aura Wellness Audio (Sample Concept)",
+      "industry": "Consumer Tech & Hardware",
+      "category": "Video Editing",
+      "challenge": "Slow video iteration cycles and low retention past the first 3 seconds on TikTok and Instagram Reels.",
+      "strategy": "Produced a series of high-tempo short-form video edits featuring kinetic text typography, sound design, and problem-solution hooks.",
+      "servicesProvided": [
+        "Video Editing & Color Grading",
+        "Short-Form Reels & TikTok Formats",
+        "Kinetic Captions & Sound Design",
+        "Hook Variation Testing"
+      ],
+      "measurableResult": "Delivered 8 distinct video cut-downs formatted in 9:16 vertical and 1:1 square for immediate multi-platform testing.",
+      "summary": "Direct-response motion editing engineered specifically to capture attention and communicate product features within 15 seconds.",
+      "isConceptWork": true,
+      "image": "/src/assets/images/service_creative_production_1793368525972.jpg",
+      "keyOutputs": [
+        "8 edited commercial short cuts in 4K resolution",
+        "Dynamic caption styles with high mobile readability",
+        "Modular sound effects library and royalty-cleared audio stems"
+      ]
+    },
+    {
+      "id": "case-social-media-b2b",
+      "title": "Executive Thought Leadership & Organic Cadence",
+      "clientPlaceholder": "Apex Logistics Global (Sample Concept)",
+      "industry": "International Supply Chain",
+      "category": "Social Media",
+      "challenge": "Inconsistent LinkedIn presence with irregular posting, leading to low visibility among international procurement managers.",
+      "strategy": "Implemented an editorial publishing calendar featuring weekly technical infographics, logistics breakdowns, and founder commentary.",
+      "servicesProvided": [
+        "Social Media Strategy",
+        "Content Calendar Planning",
+        "Page Management & Scheduling",
+        "Community Engagement & Moderation"
+      ],
+      "measurableResult": "Maintained a reliable 3-post weekly cadence with 100% on-time approvals and timely response to prospective partner inquiries.",
+      "summary": "A disciplined corporate LinkedIn roadmap establishing consistent industry visibility across London, New York, and Dubai.",
+      "isConceptWork": true,
+      "image": "/src/assets/images/service_social_media_1793433660938.jpg",
+      "keyOutputs": [
+        "12 monthly branded educational carousels",
+        "Streamlined 30-day advance content approval workflow",
+        "Active moderation of industry comments and direct inquiries"
+      ]
+    },
+    {
+      "id": "case-email-marketing-flow",
+      "title": "Automated Lifecycle Email System & Weekly Dispatch",
+      "clientPlaceholder": "Aethel Luxury Goods (Sample Concept)",
+      "industry": "Luxury Retail & Craftsmanship",
+      "category": "Email Marketing",
+      "challenge": "Over-reliance on one-off discount blasts with zero automated welcoming or post-purchase care sequences.",
+      "strategy": "Designed a 4-part automated welcome sequence educating subscribers on craftsmanship, paired with clean bi-weekly editorial dispatches.",
+      "servicesProvided": [
+        "Email Sequence Automation",
+        "Responsive Newsletter Design",
+        "Customer Retention Flows",
+        "Deliverability & Domain Health Setup"
+      ],
+      "measurableResult": "Engineered an automated 30-day subscriber nurture journey with verified SPF, DKIM, and DMARC technical alignment.",
+      "summary": "A sophisticated email architecture that treats inboxes with respect through thoughtful typography and intentional cadence.",
+      "isConceptWork": true,
+      "image": "/src/assets/images/service_email_marketing_1793433673325.jpg",
+      "keyOutputs": [
+        "Custom mobile-responsive HTML email template system",
+        "Automated Welcome, Browse Abandonment, and VIP flows",
+        "Dark mode testing across Apple Mail, Outlook, and Gmail"
+      ]
+    },
+    {
+      "id": "case-ai-business-automation",
+      "title": "Intelligent Lead Qualification & CRM Sync Pipeline",
+      "clientPlaceholder": "Meridian Capital Partners (Sample Concept)",
+      "industry": "Financial Advisory & Wealth",
+      "category": "AI Automation",
+      "challenge": "Leads from web forms and paid campaigns sat in spreadsheets for 24+ hours before being manually copied into the CRM.",
+      "strategy": "Built an automated pipeline using n8n that ingests inquiries, validates details, updates the CRM, and sends instant Slack notifications.",
+      "servicesProvided": [
+        "n8n Workflow Automation",
+        "CRM Data Synchronization",
+        "Speed-to-Lead Instant Notifications",
+        "Automated Intake Documentation"
+      ],
+      "measurableResult": "Reduced lead response and routing latency from 24 hours down to under 60 seconds with zero manual data entry errors.",
+      "summary": "An autonomous operations backbone connecting ad forms, HubSpot CRM, Slack, and automated calendar invitations.",
+      "isConceptWork": true,
+      "image": "/src/assets/images/service_ai_automation_1793368525649.jpg",
+      "keyOutputs": [
+        "Self-hosted n8n workflow with custom webhook endpoints",
+        "Real-time Slack notification alerts for urgent high-budget inquiries",
+        "Comprehensive error handling and auto-retry fallback system"
+      ]
+    }
+  ],
+  "analyticsEvents": [
+    {
+      "id": "ev_1793434305867_5hjb",
+      "type": "pageview",
+      "path": "/",
+      "device": "desktop",
+      "timestamp": "2026-10-31T08:11:45.867Z"
+    }
+  ],
+  "ownerEmail": "uzairofficials001@gmail.com",
+  "businessEmails": [
+    {
+      "id": "bmail_1",
+      "email": "inquiries@telcamarketing.com",
+      "displayName": "General Inquiries Desk",
+      "category": "General Business Inquiries",
+      "description": "Primary public email for general questions, company announcements, and agency info.",
+      "isDefault": true,
+      "status": "active",
+      "verificationStatus": "verified",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": "bmail_2",
+      "email": "sales@telcamarketing.com",
+      "displayName": "Sales & New Business",
+      "category": "Sales & New Clients",
+      "description": "Direct inbox for Custom Bundle quotes, proposal discussions, and corporate retainers.",
+      "isDefault": false,
+      "status": "active",
+      "verificationStatus": "verified",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": "bmail_3",
+      "email": "consultations@telcamarketing.com",
+      "displayName": "Growth Strategy Consultations",
+      "category": "Free Consultation Requests",
+      "description": "Dedicated routing desk for free strategy consultation and campaign audit bookings.",
+      "isDefault": false,
+      "status": "active",
+      "verificationStatus": "verified",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": "bmail_4",
+      "email": "support@telcamarketing.com",
+      "displayName": "Client Success & Support",
+      "category": "Customer Support",
+      "description": "Ongoing technical and campaign support for active retainer clients.",
+      "isDefault": false,
+      "status": "active",
+      "verificationStatus": "verified",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": "bmail_5",
+      "email": "billing@telcamarketing.com",
+      "displayName": "Accounts & Billing Desk",
+      "category": "Billing & Payments",
+      "description": "Invoicing, payment processing, wire transfer inquiries, and VAT reconciliation.",
+      "isDefault": false,
+      "status": "active",
+      "verificationStatus": "verified",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": "bmail_6",
+      "email": "partnerships@telcamarketing.com",
+      "displayName": "Strategic Partnerships & Alliances",
+      "category": "Partnerships",
+      "description": "Agency joint ventures, ad platform vendor reps, and affiliate inquiries.",
+      "isDefault": false,
+      "status": "active",
+      "verificationStatus": "verified",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": "bmail_7",
+      "email": "careers@telcamarketing.com",
+      "displayName": "Talent & Recruitment",
+      "category": "Careers & Recruitment",
+      "description": "Applications for senior performance media buyers, copywriters, and automation engineers.",
+      "isDefault": false,
+      "status": "active",
+      "verificationStatus": "verified",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": "bmail_8",
+      "email": "privacy@telcamarketing.com",
+      "displayName": "Data Privacy & GDPR Officer",
+      "category": "Privacy & Data Requests",
+      "description": "Subject access requests, GDPR/CCPA data export, and privacy policy compliance.",
+      "isDefault": false,
+      "status": "active",
+      "verificationStatus": "verified",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": "bmail_9",
+      "email": "legal@telcamarketing.com",
+      "displayName": "Legal & Contracts Desk",
+      "category": "Legal Inquiries",
+      "description": "Client Master Service Agreements (MSAs), NDAs, and corporate governance.",
+      "isDefault": false,
+      "status": "active",
+      "verificationStatus": "verified",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": "bmail_10",
+      "email": "tech@telcamarketing.com",
+      "displayName": "Technical Infrastructure & Integrations",
+      "category": "Technical Support",
+      "description": "API tracking, Conversions API (CAPI), CRM webhooks, and automation pipelines.",
+      "isDefault": false,
+      "status": "active",
+      "verificationStatus": "verified",
+      "createdAt": "2025-01-01T00:00:00Z"
+    }
+  ],
+  "recoverySettings": {
+    "primaryEmail": "uzairofficials001@gmail.com",
+    "backupEmails": [
+      {
+        "id": "rec_init_1",
+        "email": "executive-recovery@telcamarketing.com",
+        "label": "Executive Vault Recovery",
+        "isPrimary": false,
+        "status": "verified",
+        "addedAt": "2026-01-10T00:00:00Z",
+        "verifiedAt": "2026-01-10T00:05:00Z"
+      }
+    ]
+  },
+  "accountSecurity": {
+    "mfaEnabled": false,
+    "mfaMethod": "authenticator",
+    "passwordLastChanged": "2026-10-31T09:06:29.499Z",
+    "sessions": [
+      {
+        "id": "sess_curr",
+        "userId": "user_super_admin_owner",
+        "ip": "192.0.2.45",
+        "device": "MacBook Pro 16\" (macOS Sonoma)",
+        "browser": "Chrome 131.0",
+        "location": "New York, US (Current Session)",
+        "createdAt": "2026-10-31T08:06:29.499Z",
+        "lastActive": "2026-10-31T09:06:29.499Z",
+        "isCurrent": true
+      },
+      {
+        "id": "sess_mobile",
+        "userId": "user_super_admin_owner",
+        "ip": "198.51.100.12",
+        "device": "iPhone 16 Pro (iOS 18.1)",
+        "browser": "Mobile Safari",
+        "location": "London, UK",
+        "createdAt": "2026-10-29T09:06:29.499Z",
+        "lastActive": "2026-10-31T07:06:29.499Z",
+        "isCurrent": false
+      }
+    ],
+    "loginHistory": [
+      {
+        "id": "log_1793437650618",
+        "email": "uzairofficials001@gmail.com",
+        "ip": "127.0.0.1",
+        "device": "node",
+        "status": "success",
+        "timestamp": "2026-10-31T09:07:30.618Z"
+      },
+      {
+        "id": "log_1793437623872",
+        "email": "uzairofficials001@gmail.com",
+        "ip": "127.0.0.1",
+        "device": "node",
+        "status": "failed",
+        "reason": "Invalid password credential",
+        "timestamp": "2026-10-31T09:07:03.872Z"
+      },
+      {
+        "id": "log_1",
+        "email": "uzairofficials001@gmail.com",
+        "ip": "192.0.2.45",
+        "device": "Desktop (Chrome / macOS)",
+        "status": "success",
+        "timestamp": "2026-10-31T08:36:29.499Z"
+      },
+      {
+        "id": "log_2",
+        "email": "uzairofficials001@gmail.com",
+        "ip": "198.51.100.12",
+        "device": "Mobile (Safari / iOS)",
+        "status": "success",
+        "timestamp": "2026-10-31T07:06:29.499Z"
+      },
+      {
+        "id": "log_3",
+        "email": "uzairofficials001@gmail.com",
+        "ip": "203.0.113.91",
+        "device": "Unknown Client (Firefox / Linux)",
+        "status": "failed",
+        "reason": "Mismatched cryptographic credential hash",
+        "timestamp": "2026-10-30T09:06:29.499Z"
+      }
+    ]
+  },
+  "teamMembers": [
+    {
+      "id": "tm_1",
+      "fullName": "Agency Owner & Super Admin",
+      "email": "uzairofficials001@gmail.com",
+      "role": "owner",
+      "status": "active",
+      "invitedAt": "2025-01-01T00:00:00Z",
+      "lastActive": "2026-10-31T09:06:29.499Z"
+    },
+    {
+      "id": "tm_2",
+      "fullName": "Elena Rostova",
+      "email": "elena.rostova@telcamarketing.com",
+      "role": "content_manager",
+      "status": "active",
+      "invitedAt": "2026-03-10T00:00:00Z",
+      "lastActive": "2026-10-30T21:06:29.499Z"
+    },
+    {
+      "id": "tm_3",
+      "fullName": "Tariq Al-Mansoor",
+      "email": "tariq.mansoor@telcamarketing.com",
+      "role": "marketing_manager",
+      "status": "active",
+      "invitedAt": "2026-05-18T00:00:00Z",
+      "lastActive": "2026-10-30T09:06:29.499Z"
+    },
+    {
+      "id": "tm_4",
+      "fullName": "Callum Davies",
+      "email": "callum.davies@telcamarketing.com",
+      "role": "enquiry_manager",
+      "status": "active",
+      "invitedAt": "2026-08-01T00:00:00Z",
+      "lastActive": "2026-10-31T03:06:29.499Z"
+    }
+  ],
+  "backups": [],
+  "notificationConfig": {
+    "securityAlerts": true,
+    "notifyOnFailedLogin": true,
+    "notifyOnPasswordChange": true,
+    "notifyOnRecoveryChange": true,
+    "notifyOnNewEnquiry": true,
+    "recipientEmails": [
+      "uzairofficials001@gmail.com"
+    ]
+  }
+}
