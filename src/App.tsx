@@ -73,6 +73,11 @@ function AppContent() {
   // Initialize privacy-respecting visitor session on mount
   useEffect(() => {
     initVisitorSession();
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('mode') === 'resetPassword' && params.get('oobCode')) {
+      setAuthModalMode('forgot');
+      setAuthModalOpen(true);
+    }
   }, []);
 
   // Sync hash changes (back/forward browser navigation)

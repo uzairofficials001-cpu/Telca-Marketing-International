@@ -6,13 +6,16 @@ import {
   updateProfile,
   sendPasswordResetEmail,
   confirmPasswordReset,
+  sendEmailVerification,
   signOut,
   onAuthStateChanged,
   User as FirebaseUser,
 } from 'firebase/auth';
 import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { auth, db, googleProvider, handleFirestoreError, OperationType } from '../firebase';
+import firebaseConfig from '../../firebase-applet-config.json';
 
+export const FIREBASE_PROJECT_ID = firebaseConfig.projectId;
 const OWNER_ADMIN_EMAIL = 'uzairofficials001@gmail.com';
 export const FIREBASE_STATIC_TOKEN = 'firebase-static-session';
 
@@ -29,7 +32,9 @@ export interface UserProfile {
 interface AuthResult {
   success: boolean;
   error?: string;
+  errorCode?: string;
   isAdmin?: boolean;
+  verificationSent?: boolean;
 }
 
 interface ForgotResult {
@@ -38,12 +43,14 @@ interface ForgotResult {
   viaEmail?: boolean;
   message?: string;
   error?: string;
+  errorCode?: string;
 }
 
 interface ResetResult {
   success: boolean;
   message?: string;
   error?: string;
+  errorCode?: string;
 }
 
 interface AuthContextType {
@@ -174,7 +181,7 @@ function formatFirebaseAuthError(err: any, fallbackMsg: string): string {
     code === 'auth/user-not-found' ||
     code === 'auth/wrong-password'
   ) {
-    return 'Invalid email or password. If you are on Netlify static hosting, sign in with Google or use Forgot / Reset Password.';
+    return 'Incorrect email/password, or this account is not yet registered in Firebase Auth. Click "Continue with Google" or use Register / Reset Password.';
   }
   if (code === 'auth/too-many-requests') {
     return 'Too many attempts. Please wait a moment or reset your password.';
@@ -295,6 +302,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     } catch (err: any) {
       return {
         success: false,
+        errorCode: err?.code,
         error: formatFirebaseAuthError(
           err,
           'Could not connect to backend server. Use "Continue with Google" for instant cloud authentication.'
@@ -336,6 +344,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     } catch (err: any) {
       return {
         success: false,
+        errorCode: err?.code,
         error: formatFirebaseAuthError(err, 'Google Sign-In failed. Please try again.'),
       };
     }
@@ -367,15 +376,25 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (fullName.trim()) {
         await updateProfile(cred.user, { displayName: fullName.trim() });
       }
+      let verificationSent = false;
+      if (!cred.user.emailVerified) {
+        try {
+          await sendEmailVerification(cred.user);
+          verificationSent = true;
+        } catch {
+          // Non-fatal if email verification rate-limited
+        }
+      }
       const role = await syncFirestoreUser(cred.user, 'password');
       const profile = buildFirebaseUserProfile(cred.user, role);
       localStorage.setItem('telca_auth_token', FIREBASE_STATIC_TOKEN);
       setToken(FIREBASE_STATIC_TOKEN);
       setUser(profile);
-      return { success: true, isAdmin: profile.role === 'admin' };
+      return { success: true, isAdmin: profile.role === 'admin', verificationSent };
     } catch (err: any) {
       return {
         success: false,
+        errorCode: err?.code,
         error: formatFirebaseAuthError(err, 'Could not complete registration. Try Google Sign-In.'),
       };
     }
@@ -417,6 +436,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     } catch (err: any) {
       return {
         success: false,
+        errorCode: err?.code,
         error: formatFirebaseAuthError(
           err,
           'Could not send password reset email. Ensure Email/Password auth is enabled in Firebase Console or use Google Sign-In.'
@@ -449,6 +469,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     } catch (err: any) {
       return {
         success: false,
+        errorCode: err?.code,
         error: formatFirebaseAuthError(err, 'Invalid or expired password reset code.'),
       };
     }

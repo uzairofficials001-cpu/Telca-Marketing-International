@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Lock, Mail, User, ShieldCheck, ArrowRight, CheckCircle2, AlertCircle, KeyRound, Eye, EyeOff } from 'lucide-react';
-import { useAuth } from '../context/AuthContext';
+import { X, Lock, Mail, User, ShieldCheck, ArrowRight, CheckCircle2, AlertCircle, KeyRound, Eye, EyeOff, ExternalLink, Copy, Check } from 'lucide-react';
+import { useAuth, FIREBASE_PROJECT_ID } from '../context/AuthContext';
 
 interface AuthModalProps {
   isOpen: boolean;
@@ -52,6 +52,8 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   const [showPassword, setShowPassword] = useState(false);
 
   const [errorMessage, setErrorMessage] = useState('');
+  const [errorCode, setErrorCode] = useState('');
+  const [copiedDomain, setCopiedDomain] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isGoogleSubmitting, setIsGoogleSubmitting] = useState(false);
@@ -60,8 +62,17 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
   useEffect(() => {
     if (isOpen) {
-      setMode(initialMode);
+      const params = new URLSearchParams(window.location.search);
+      const urlMode = params.get('mode');
+      const oobCode = params.get('oobCode');
+      if (urlMode === 'resetPassword' && oobCode) {
+        setMode('reset');
+        setResetToken(oobCode);
+      } else {
+        setMode(initialMode);
+      }
       setErrorMessage('');
+      setErrorCode('');
       setSuccessMessage('');
       const originalOverflow = document.body.style.overflow;
       document.body.style.overflow = 'hidden';
@@ -90,6 +101,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
   const handleGoogleSignIn = async () => {
     setErrorMessage('');
+    setErrorCode('');
     setSuccessMessage('');
     setIsGoogleSubmitting(true);
     const res = await loginWithGoogle();
@@ -99,6 +111,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
       onSuccess?.();
       onClose();
     } else {
+      setErrorCode(res.errorCode || '');
       setErrorMessage(res.error || 'Could not sign in with Google.');
     }
   };
@@ -106,6 +119,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage('');
+    setErrorCode('');
     setSuccessMessage('');
     if (!email.trim() || !password) {
       setErrorMessage('Please enter both your email address and password');
@@ -120,6 +134,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
       onSuccess?.();
       onClose();
     } else {
+      setErrorCode(res.errorCode || '');
       setErrorMessage(res.error || 'Failed to sign in. Please verify your credentials.');
     }
   };
@@ -127,6 +142,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage('');
+    setErrorCode('');
     setSuccessMessage('');
 
     if (!fullName.trim() || !email.trim() || !password || !confirmPassword) {
@@ -152,6 +168,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
       onSuccess?.();
       onClose();
     } else {
+      setErrorCode(res.errorCode || '');
       setErrorMessage(res.error || 'Registration failed');
     }
   };
@@ -159,6 +176,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   const handleForgotPassword = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage('');
+    setErrorCode('');
     setSuccessMessage('');
 
     if (!email.trim()) {
@@ -185,6 +203,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
         }
       }
     } else {
+      setErrorCode(res.errorCode || '');
       setErrorMessage(res.error || 'Failed to process password recovery');
     }
   };
@@ -192,6 +211,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   const handleResetPassword = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage('');
+    setErrorCode('');
     setSuccessMessage('');
 
     if (!resetToken.trim() || !newPassword) {
@@ -221,6 +241,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
       setConfirmNewPassword('');
       setResetToken('');
     } else {
+      setErrorCode(res.errorCode || '');
       setErrorMessage(res.error || 'Password reset failed');
     }
   };
@@ -318,9 +339,56 @@ export const AuthModal: React.FC<AuthModalProps> = ({
           <div className="p-6">
             {/* Feedback Notifications */}
             {errorMessage && (
-              <div className="mb-4 p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs flex items-start gap-2.5">
-                <AlertCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-                <span className="leading-relaxed">{errorMessage}</span>
+              <div className="mb-4 p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs space-y-2.5">
+                <div className="flex items-start gap-2.5">
+                  <AlertCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+                  <span className="leading-relaxed">{errorMessage}</span>
+                </div>
+
+                {errorCode === 'auth/unauthorized-domain' && typeof window !== 'undefined' && (
+                  <div className="pt-2 border-t border-red-200/80 space-y-2">
+                    <div className="flex items-center justify-between gap-2 bg-white px-2.5 py-1.5 rounded-lg border border-red-200">
+                      <code className="text-[11px] font-mono font-semibold text-slate-800 truncate">
+                        {window.location.hostname}
+                      </code>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          void navigator.clipboard?.writeText(window.location.hostname);
+                          setCopiedDomain(true);
+                          setTimeout(() => setCopiedDomain(false), 2000);
+                        }}
+                        className="inline-flex items-center gap-1 text-[11px] font-bold text-[#356DFF] hover:text-[#101B35] shrink-0"
+                      >
+                        {copiedDomain ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
+                        <span>{copiedDomain ? 'Copied' : 'Copy'}</span>
+                      </button>
+                    </div>
+                    <a
+                      href={`https://console.firebase.google.com/project/${FIREBASE_PROJECT_ID}/authentication/settings`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#101B35] bg-white hover:bg-slate-50 border border-red-200 px-3 py-1.5 rounded-lg transition-colors"
+                    >
+                      <span>Open Authorized Domains in Firebase Console</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </div>
+                )}
+
+                {errorCode === 'auth/operation-not-allowed' && (
+                  <div className="pt-2 border-t border-red-200/80">
+                    <a
+                      href={`https://console.firebase.google.com/project/${FIREBASE_PROJECT_ID}/authentication/providers`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#101B35] bg-white hover:bg-slate-50 border border-red-200 px-3 py-1.5 rounded-lg transition-colors"
+                    >
+                      <span>Enable Email/Password in Firebase Console</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </div>
+                )}
               </div>
             )}
 

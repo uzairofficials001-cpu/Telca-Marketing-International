@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../context/AuthContext';
+import { useAuth, FIREBASE_PROJECT_ID } from '../context/AuthContext';
 import { MEDIA_ASSETS, resolveMediaUrl } from '../utils/mediaAssets';
 import { 
   ShieldAlert, 
@@ -93,6 +93,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigateHome, onOpenAuth
   const { user, token, logout, loginWithGoogle, isStaticCloudAuth } = useAuth();
   const [googleSigningIn, setGoogleSigningIn] = useState(false);
   const [googleAuthError, setGoogleAuthError] = useState('');
+  const [googleAuthErrorCode, setGoogleAuthErrorCode] = useState('');
   const [staticFallbackNotice, setStaticFallbackNotice] = useState(false);
   
   // Navigation tabs (comprehensive enterprise modules)
@@ -652,8 +653,19 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigateHome, onOpenAuth
           </div>
 
           {googleAuthError && (
-            <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs text-left leading-relaxed">
-              {googleAuthError}
+            <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs text-left leading-relaxed space-y-2">
+              <div>{googleAuthError}</div>
+              {googleAuthErrorCode === 'auth/unauthorized-domain' && (
+                <a
+                  href={`https://console.firebase.google.com/project/${FIREBASE_PROJECT_ID}/authentication/settings`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#101B35] bg-white hover:bg-slate-50 border border-red-200 px-3 py-1.5 rounded-lg transition-colors"
+                >
+                  <span>Open Authorized Domains in Firebase Console</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              )}
             </div>
           )}
 
@@ -663,10 +675,12 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigateHome, onOpenAuth
               disabled={googleSigningIn}
               onClick={async () => {
                 setGoogleAuthError('');
+                setGoogleAuthErrorCode('');
                 setGoogleSigningIn(true);
                 const res = await loginWithGoogle();
                 setGoogleSigningIn(false);
                 if (!res.success && res.error) {
+                  setGoogleAuthErrorCode(res.errorCode || '');
                   setGoogleAuthError(res.error);
                 }
               }}
