@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Lock, Mail, User, ShieldCheck, ArrowRight, CheckCircle2, AlertCircle, KeyRound } from 'lucide-react';
+import { X, Lock, Mail, User, ShieldCheck, ArrowRight, CheckCircle2, AlertCircle, KeyRound, Eye, EyeOff } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 interface AuthModalProps {
@@ -10,13 +10,34 @@ interface AuthModalProps {
   onSuccess?: () => void;
 }
 
+const GoogleMark: React.FC = () => (
+  <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+    <path
+      fill="#4285F4"
+      d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17Z"
+    />
+    <path
+      fill="#34A853"
+      d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.11-6.72-4.96H1.29v3.14C3.26 21.3 7.31 24 12 24Z"
+    />
+    <path
+      fill="#FBBC05"
+      d="M5.28 14.24c-.24-.72-.38-1.49-.38-2.24s.14-1.52.38-2.24V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.99-3.14Z"
+    />
+    <path
+      fill="#EA4335"
+      d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.99 3.14c.95-2.85 3.6-4.96 6.72-4.96Z"
+    />
+  </svg>
+);
+
 export const AuthModal: React.FC<AuthModalProps> = ({
   isOpen,
   initialMode = 'signin',
   onClose,
   onSuccess
 }) => {
-  const { login, register, forgotPassword, resetPassword } = useAuth();
+  const { login, loginWithGoogle, register, forgotPassword, resetPassword } = useAuth();
   const [mode, setMode] = useState<'signin' | 'signup' | 'forgot' | 'reset'>(initialMode);
 
   // Form inputs
@@ -28,24 +49,23 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   const [newPassword, setNewPassword] = useState('');
   const [confirmNewPassword, setConfirmNewPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
 
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isGoogleSubmitting, setIsGoogleSubmitting] = useState(false);
 
   const emailInputRef = useRef<HTMLInputElement>(null);
 
-  // Sync mode when modal opens or initialMode changes
   useEffect(() => {
     if (isOpen) {
       setMode(initialMode);
       setErrorMessage('');
       setSuccessMessage('');
-      // Prevent background scrolling
       const originalOverflow = document.body.style.overflow;
       document.body.style.overflow = 'hidden';
 
-      // Autofocus
       setTimeout(() => {
         emailInputRef.current?.focus();
       }, 100);
@@ -56,7 +76,6 @@ export const AuthModal: React.FC<AuthModalProps> = ({
     }
   }, [isOpen, initialMode]);
 
-  // Keyboard accessibility: Escape to close
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isOpen) {
@@ -69,9 +88,25 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
   if (!isOpen) return null;
 
+  const handleGoogleSignIn = async () => {
+    setErrorMessage('');
+    setSuccessMessage('');
+    setIsGoogleSubmitting(true);
+    const res = await loginWithGoogle();
+    setIsGoogleSubmitting(false);
+
+    if (res.success) {
+      onSuccess?.();
+      onClose();
+    } else {
+      setErrorMessage(res.error || 'Could not sign in with Google.');
+    }
+  };
+
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage('');
+    setSuccessMessage('');
     if (!email.trim() || !password) {
       setErrorMessage('Please enter both your email address and password');
       return;
@@ -92,6 +127,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage('');
+    setSuccessMessage('');
 
     if (!fullName.trim() || !email.trim() || !password || !confirmPassword) {
       setErrorMessage('All registration fields are required');
@@ -123,6 +159,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   const handleForgotPassword = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage('');
+    setSuccessMessage('');
 
     if (!email.trim()) {
       setErrorMessage('Please enter your email address');
@@ -134,11 +171,19 @@ export const AuthModal: React.FC<AuthModalProps> = ({
     setIsSubmitting(false);
 
     if (res.success) {
-      setSuccessMessage('Recovery token generated. You can enter your token below to set a new password.');
-      if (res.resetToken) {
-        setResetToken(res.resetToken);
+      if (res.viaEmail) {
+        setSuccessMessage(res.message || 'Password reset email sent. Check your inbox.');
+      } else {
+        setSuccessMessage(
+          res.resetToken
+            ? 'Recovery token generated below. Set your new password now.'
+            : (res.message || 'Recovery instructions prepared.')
+        );
+        if (res.resetToken) {
+          setResetToken(res.resetToken);
+          setMode('reset');
+        }
       }
-      setMode('reset');
     } else {
       setErrorMessage(res.error || 'Failed to process password recovery');
     }
@@ -147,9 +192,10 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   const handleResetPassword = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage('');
+    setSuccessMessage('');
 
     if (!resetToken.trim() || !newPassword) {
-      setErrorMessage('Reset token and new password are required');
+      setErrorMessage('Reset token/code and new password are required');
       return;
     }
 
@@ -168,13 +214,18 @@ export const AuthModal: React.FC<AuthModalProps> = ({
     setIsSubmitting(false);
 
     if (res.success) {
-      setSuccessMessage('Password reset successful! Please sign in with your new password.');
+      setSuccessMessage(res.message || 'Password reset successful! Please sign in with your new password.');
       setMode('signin');
       setPassword('');
+      setNewPassword('');
+      setConfirmNewPassword('');
+      setResetToken('');
     } else {
       setErrorMessage(res.error || 'Password reset failed');
     }
   };
+
+  const isResetFlow = mode === 'forgot' || mode === 'reset';
 
   return (
     <AnimatePresence>
@@ -203,11 +254,12 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               <h3 className="text-lg font-extrabold text-[#101B35] tracking-tight mt-0.5">
                 {mode === 'signin' && 'Sign In to Your Account'}
                 {mode === 'signup' && 'Create Your Telca Account'}
-                {mode === 'forgot' && 'Reset Your Password'}
-                {mode === 'reset' && 'Create New Password'}
+                {mode === 'forgot' && 'Forgot & Recover Password'}
+                {mode === 'reset' && 'Set New Password'}
               </h3>
             </div>
             <button
+              type="button"
               onClick={onClose}
               className="p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-full transition-colors"
               aria-label="Close dialog"
@@ -216,39 +268,51 @@ export const AuthModal: React.FC<AuthModalProps> = ({
             </button>
           </div>
 
-          {/* Mode Switcher Tabs for Sign In / Sign Up */}
-          {(mode === 'signin' || mode === 'signup') && (
-            <div className="flex border-b border-slate-100 bg-slate-50/50">
-              <button
-                type="button"
-                onClick={() => {
-                  setMode('signin');
-                  setErrorMessage('');
-                }}
-                className={`flex-1 py-3 text-xs font-bold uppercase tracking-wider transition-colors border-b-2 ${
-                  mode === 'signin'
-                    ? 'border-[#356DFF] text-[#356DFF] bg-white'
-                    : 'border-transparent text-slate-500 hover:text-slate-800'
-                }`}
-              >
-                Sign In
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setMode('signup');
-                  setErrorMessage('');
-                }}
-                className={`flex-1 py-3 text-xs font-bold uppercase tracking-wider transition-colors border-b-2 ${
-                  mode === 'signup'
-                    ? 'border-[#356DFF] text-[#356DFF] bg-white'
-                    : 'border-transparent text-slate-500 hover:text-slate-800'
-                }`}
-              >
-                Register
-              </button>
-            </div>
-          )}
+          {/* Mode Switcher Tabs: Sign In / Register / Reset Password */}
+          <div className="flex border-b border-slate-100 bg-slate-50/50">
+            <button
+              type="button"
+              onClick={() => {
+                setMode('signin');
+                setErrorMessage('');
+              }}
+              className={`flex-1 py-3 text-[11px] font-bold uppercase tracking-wider transition-colors border-b-2 ${
+                mode === 'signin'
+                  ? 'border-[#356DFF] text-[#356DFF] bg-white'
+                  : 'border-transparent text-slate-500 hover:text-slate-800'
+              }`}
+            >
+              Sign In
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setMode('signup');
+                setErrorMessage('');
+              }}
+              className={`flex-1 py-3 text-[11px] font-bold uppercase tracking-wider transition-colors border-b-2 ${
+                mode === 'signup'
+                  ? 'border-[#356DFF] text-[#356DFF] bg-white'
+                  : 'border-transparent text-slate-500 hover:text-slate-800'
+              }`}
+            >
+              Register
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setMode('forgot');
+                setErrorMessage('');
+              }}
+              className={`flex-1 py-3 text-[11px] font-bold uppercase tracking-wider transition-colors border-b-2 ${
+                isResetFlow
+                  ? 'border-[#356DFF] text-[#356DFF] bg-white'
+                  : 'border-transparent text-slate-500 hover:text-slate-800'
+              }`}
+            >
+              Reset Password
+            </button>
+          </div>
 
           {/* Content Body */}
           <div className="p-6">
@@ -264,6 +328,31 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               <div className="mb-4 p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs flex items-start gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <span className="leading-relaxed">{successMessage}</span>
+              </div>
+            )}
+
+            {/* Google Sign-In Option (Shown on Sign In and Register) */}
+            {(mode === 'signin' || mode === 'signup') && (
+              <div className="mb-5">
+                <button
+                  type="button"
+                  onClick={handleGoogleSignIn}
+                  disabled={isGoogleSubmitting || isSubmitting}
+                  className="w-full py-2.5 px-4 bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 text-[#101B35] text-xs font-bold rounded-xl shadow-xs transition-all flex items-center justify-center gap-2.5 cursor-pointer disabled:opacity-60"
+                >
+                  <GoogleMark />
+                  <span>
+                    {isGoogleSubmitting ? 'Connecting to Google...' : 'Continue with Google'}
+                  </span>
+                </button>
+
+                <div className="relative flex items-center justify-center my-4">
+                  <div className="border-t border-slate-200 w-full" />
+                  <span className="px-3 text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-white shrink-0">
+                    or use email &amp; password
+                  </span>
+                  <div className="border-t border-slate-200 w-full" />
+                </div>
               </div>
             )}
 
@@ -298,22 +387,31 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                       onClick={() => {
                         setMode('forgot');
                         setErrorMessage('');
+                        setSuccessMessage('');
                       }}
-                      className="text-[11px] font-semibold text-[#356DFF] hover:underline"
+                      className="text-xs font-bold text-[#356DFF] hover:text-[#101B35] hover:underline"
                     >
-                      Forgot Password?
+                      Forgot / Reset Password?
                     </button>
                   </div>
                   <div className="relative">
                     <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-3 pointer-events-none" />
                     <input
-                      type="password"
+                      type={showPassword ? 'text' : 'password'}
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder="••••••••"
                       required
-                      className="w-full pl-10 pr-3.5 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#356DFF] focus:bg-white transition-all"
+                      className="w-full pl-10 pr-10 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#356DFF] focus:bg-white transition-all"
                     />
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute right-3 top-2.5 text-slate-400 hover:text-slate-600"
+                      aria-label={showPassword ? 'Hide password' : 'Show password'}
+                    >
+                      {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                    </button>
                   </div>
                 </div>
 
@@ -327,11 +425,22 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                     />
                     <span>Remember my session</span>
                   </label>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setMode('reset');
+                      setErrorMessage('');
+                      setSuccessMessage('');
+                    }}
+                    className="text-[11px] font-semibold text-slate-500 hover:text-[#356DFF]"
+                  >
+                    Have a reset token?
+                  </button>
                 </div>
 
                 <button
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || isGoogleSubmitting}
                   className="w-full py-3 px-4 bg-[#101B35] hover:bg-[#356DFF] disabled:bg-slate-400 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-md inline-flex items-center justify-center gap-2"
                 >
                   <span>{isSubmitting ? 'Verifying...' : 'Sign In'}</span>
@@ -385,14 +494,22 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                   <div className="relative">
                     <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-3 pointer-events-none" />
                     <input
-                      type="password"
+                      type={showPassword ? 'text' : 'password'}
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder="••••••••"
                       required
                       minLength={6}
-                      className="w-full pl-10 pr-3.5 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#356DFF] focus:bg-white transition-all"
+                      className="w-full pl-10 pr-10 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#356DFF] focus:bg-white transition-all"
                     />
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute right-3 top-2.5 text-slate-400 hover:text-slate-600"
+                      aria-label={showPassword ? 'Hide password' : 'Show password'}
+                    >
+                      {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                    </button>
                   </div>
                 </div>
 
@@ -403,7 +520,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                   <div className="relative">
                     <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-3 pointer-events-none" />
                     <input
-                      type="password"
+                      type={showPassword ? 'text' : 'password'}
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
                       placeholder="••••••••"
@@ -420,7 +537,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
                 <button
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || isGoogleSubmitting}
                   className="w-full py-3 px-4 bg-[#101B35] hover:bg-[#356DFF] disabled:bg-slate-400 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-md inline-flex items-center justify-center gap-2 mt-2"
                 >
                   <span>{isSubmitting ? 'Creating Account...' : 'Create Account'}</span>
@@ -433,12 +550,12 @@ export const AuthModal: React.FC<AuthModalProps> = ({
             {mode === 'forgot' && (
               <form onSubmit={handleForgotPassword} className="space-y-4">
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Enter your registered business email and we will prepare a secure password recovery token.
+                  Enter your account email to generate a secure recovery token (when connected to the backend) or send a password reset email.
                 </p>
 
                 <div>
                   <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                    Email Address
+                    Registered Email Address
                   </label>
                   <div className="relative">
                     <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-3 pointer-events-none" />
@@ -446,19 +563,28 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="name@company.com"
+                      placeholder="uzairofficials001@gmail.com"
                       required
                       className="w-full pl-10 pr-3.5 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#356DFF] focus:bg-white transition-all"
                     />
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between pt-2">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full py-3 px-5 bg-[#101B35] hover:bg-[#356DFF] disabled:bg-slate-400 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm"
+                >
+                  {isSubmitting ? 'Processing Recovery...' : 'Send Reset / Generate Token'}
+                </button>
+
+                <div className="flex items-center justify-between pt-2 border-t border-slate-100">
                   <button
                     type="button"
                     onClick={() => {
                       setMode('signin');
                       setErrorMessage('');
+                      setSuccessMessage('');
                     }}
                     className="text-xs font-semibold text-slate-500 hover:text-slate-800"
                   >
@@ -466,11 +592,14 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                   </button>
 
                   <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="py-2.5 px-5 bg-[#101B35] hover:bg-[#356DFF] disabled:bg-slate-400 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all"
+                    type="button"
+                    onClick={() => {
+                      setMode('reset');
+                      setErrorMessage('');
+                    }}
+                    className="text-xs font-bold text-[#356DFF] hover:underline"
                   >
-                    {isSubmitting ? 'Generating...' : 'Send Recovery Token'}
+                    Enter Reset Token / Code &rarr;
                   </button>
                 </div>
               </form>
@@ -481,7 +610,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               <form onSubmit={handleResetPassword} className="space-y-3.5">
                 <div>
                   <label className="block text-xs font-semibold text-slate-700 mb-1">
-                    Recovery Token
+                    Recovery Token / Reset Code
                   </label>
                   <div className="relative">
                     <KeyRound className="w-4 h-4 text-slate-400 absolute left-3.5 top-3 pointer-events-none" />
@@ -489,7 +618,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                       type="text"
                       value={resetToken}
                       onChange={(e) => setResetToken(e.target.value)}
-                      placeholder="reset_..."
+                      placeholder="reset_... or email reset code"
                       required
                       className="w-full pl-10 pr-3.5 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl font-mono text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#356DFF] focus:bg-white transition-all"
                     />
@@ -503,14 +632,22 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                   <div className="relative">
                     <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-3 pointer-events-none" />
                     <input
-                      type="password"
+                      type={showPassword ? 'text' : 'password'}
                       value={newPassword}
                       onChange={(e) => setNewPassword(e.target.value)}
                       placeholder="••••••••"
                       required
                       minLength={6}
-                      className="w-full pl-10 pr-3.5 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#356DFF] focus:bg-white transition-all"
+                      className="w-full pl-10 pr-10 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#356DFF] focus:bg-white transition-all"
                     />
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute right-3 top-2.5 text-slate-400 hover:text-slate-600"
+                      aria-label={showPassword ? 'Hide password' : 'Show password'}
+                    >
+                      {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                    </button>
                   </div>
                 </div>
 
@@ -521,7 +658,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                   <div className="relative">
                     <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-3 pointer-events-none" />
                     <input
-                      type="password"
+                      type={showPassword ? 'text' : 'password'}
                       value={confirmNewPassword}
                       onChange={(e) => setConfirmNewPassword(e.target.value)}
                       placeholder="••••••••"
@@ -536,12 +673,12 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                   <button
                     type="button"
                     onClick={() => {
-                      setMode('signin');
+                      setMode('forgot');
                       setErrorMessage('');
                     }}
                     className="text-xs font-semibold text-slate-500 hover:text-slate-800"
                   >
-                    Cancel
+                    &larr; Request Token
                   </button>
 
                   <button

@@ -77,6 +77,10 @@ import {
   AnimatedHorizontalBars
 } from '../components/AdminCharts';
 import { AdminNotificationsModule } from '../components/AdminNotificationsModule';
+import { servicesData } from '../data/servicesData';
+import { caseStudiesData } from '../data/caseStudiesData';
+import { insightsArticles } from '../data/insightsData';
+import { paidAdsPlatforms, greatValueGrowthBundles } from '../data/pricingData';
 
 const OWNER_ADMIN_EMAIL = 'uzairofficials001@gmail.com';
 
@@ -86,7 +90,10 @@ interface AdminPageProps {
 }
 
 export const AdminPage: React.FC<AdminPageProps> = ({ onNavigateHome, onOpenAuth }) => {
-  const { user, token, logout } = useAuth();
+  const { user, token, logout, loginWithGoogle, isStaticCloudAuth } = useAuth();
+  const [googleSigningIn, setGoogleSigningIn] = useState(false);
+  const [googleAuthError, setGoogleAuthError] = useState('');
+  const [staticFallbackNotice, setStaticFallbackNotice] = useState(false);
   
   // Navigation tabs (comprehensive enterprise modules)
   const [activeTab, setActiveTab] = useState<
@@ -352,15 +359,44 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigateHome, onOpenAuth
   };
 
   // Fetch initial data from backend
+  const applyStaticCatalogFallback = () => {
+    setStaticFallbackNotice(true);
+    setServices(Object.values(servicesData));
+    setPortfolioList(caseStudiesData);
+    setBlogList(insightsArticles);
+    setPricing({ paidAdsPlatforms });
+    setBundlesConfig({ readyMade: greatValueGrowthBundles, discountPercentage: 10 });
+    setOverviewData({
+      metrics: {
+        totalEnquiries: 0,
+        newEnquiries: 0,
+        totalUsers: 1,
+        publishedServices: Object.values(servicesData).length,
+        publishedCaseStudies: caseStudiesData.length,
+        publishedArticles: insightsArticles.length
+      }
+    });
+  };
+
   const loadData = async () => {
     if (!token || user?.role !== 'admin') return;
+    if (isStaticCloudAuth) {
+      applyStaticCatalogFallback();
+      return;
+    }
     setLoading(true);
 
     try {
       const headers = { Authorization: `Bearer ${token}` };
 
-      // 1. Overview
+      // 1. Overview (detect non-JSON responses when hosted statically without Express server)
       const resOverview = await fetch('/api/admin/overview', { headers });
+      const contentType = resOverview.headers.get('content-type') || '';
+      if (!contentType.includes('application/json')) {
+        applyStaticCatalogFallback();
+        return;
+      }
+      setStaticFallbackNotice(false);
       if (resOverview.ok) {
         setOverviewData(await resOverview.json());
       }
@@ -517,7 +553,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigateHome, onOpenAuth
       }
     } catch (err) {
       console.error('Failed to load admin data:', err);
-      showNotification('error', 'Error connecting to backend database.');
+      applyStaticCatalogFallback();
     } finally {
       setLoading(false);
     }
@@ -528,15 +564,15 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigateHome, onOpenAuth
   }, [token, user]);
 
   useEffect(() => {
-    if (token && user?.role === 'admin') {
+    if (token && !isStaticCloudAuth && user?.role === 'admin') {
       fetch(`/api/admin/analytics?range=${analyticsRange}`, {
         headers: { Authorization: `Bearer ${token}` }
       })
-        .then(res => res.json())
-        .then(data => setAnalyticsData(data))
+        .then(res => (res.headers.get('content-type') || '').includes('application/json') ? res.json() : null)
+        .then(data => { if (data) setAnalyticsData(data); })
         .catch(() => {});
     }
-  }, [analyticsRange]);
+  }, [analyticsRange, isStaticCloudAuth, token, user]);
 
   const refreshUnreadNotificationsCount = async () => {
     if (!token || user?.role !== 'admin') return;
@@ -615,12 +651,40 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigateHome, onOpenAuth
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 pt-2">
+          {googleAuthError && (
+            <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs text-left leading-relaxed">
+              {googleAuthError}
+            </div>
+          )}
+
+          <div className="flex flex-col gap-2.5 pt-2">
+            <button
+              type="button"
+              disabled={googleSigningIn}
+              onClick={async () => {
+                setGoogleAuthError('');
+                setGoogleSigningIn(true);
+                const res = await loginWithGoogle();
+                setGoogleSigningIn(false);
+                if (!res.success && res.error) {
+                  setGoogleAuthError(res.error);
+                }
+              }}
+              className="w-full py-3 px-4 bg-white hover:bg-slate-50 border border-slate-300 text-[#101B35] text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-2.5 shadow-xs disabled:opacity-60"
+            >
+              <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17Z" />
+                <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.11-6.72-4.96H1.29v3.14C3.26 21.3 7.31 24 12 24Z" />
+                <path fill="#FBBC05" d="M5.28 14.24c-.24-.72-.38-1.49-.38-2.24s.14-1.52.38-2.24V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.99-3.14Z" />
+                <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.99 3.14c.95-2.85 3.6-4.96 6.72-4.96Z" />
+              </svg>
+              <span>{googleSigningIn ? 'Connecting to Google...' : 'Continue with Google (Owner Access)'}</span>
+            </button>
             <button
               onClick={() => onOpenAuth('signin')}
               className="w-full py-3 bg-[#101B35] hover:bg-[#356DFF] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all"
             >
-              Sign In as Super Admin
+              Sign In with Email / Password
             </button>
             <button
               onClick={onNavigateHome}
@@ -2729,6 +2793,28 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigateHome, onOpenAuth
 
         {/* Main Content Workspace */}
         <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 space-y-6">
+
+          {staticFallbackNotice && (
+            <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 text-xs flex items-start justify-between gap-3">
+              <div className="flex items-start gap-2.5">
+                <AlertCircle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+                <div>
+                  <div className="font-bold">Static Hosting Preview Mode (Google / Cloud Auth Connected)</div>
+                  <p className="text-amber-800 mt-0.5 leading-relaxed">
+                    You are authenticated as Owner Admin, and static catalog previews are loaded. Live CRM inquiries, database edits, and email/push notifications require running the Node backend (`npm start` on a Node host or AI Studio server).
+                  </p>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setStaticFallbackNotice(false)}
+                className="p-1 text-amber-700 hover:bg-amber-100 rounded"
+                aria-label="Dismiss notice"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+          )}
 
           {/* Toast Notification */}
           {notification && (

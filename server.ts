@@ -310,6 +310,137 @@ async function startServer() {
     }
   });
 
+  // Google Sign-In (verifies Firebase ID token server-side via Identity Toolkit)
+  app.post('/api/auth/google', async (req: Request, res: Response): Promise<void> => {
+    try {
+      const { idToken } = req.body || {};
+      if (!idToken || typeof idToken !== 'string') {
+        res.status(400).json({ error: 'Google ID token is required' });
+        return;
+      }
+
+      const configPath = path.resolve(process.cwd(), 'firebase-applet-config.json');
+      if (!fs.existsSync(configPath)) {
+        res.status(503).json({ error: 'Firebase configuration is missing on the server' });
+        return;
+      }
+
+      const firebaseConfig = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+      const apiKey = firebaseConfig?.apiKey;
+      if (!apiKey) {
+        res.status(503).json({ error: 'Firebase API key is missing on the server' });
+        return;
+      }
+
+      const verifyRes = await fetch(
+        `https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=${encodeURIComponent(apiKey)}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ idToken })
+        }
+      );
+
+      if (!verifyRes.ok) {
+        res.status(401).json({ error: 'Invalid or expired Google authentication token' });
+        return;
+      }
+
+      const verifyData = (await verifyRes.json()) as {
+        users?: Array<{
+          localId?: string;
+          email?: string;
+          emailVerified?: boolean;
+          displayName?: string;
+        }>;
+      };
+
+      const verifiedGoogleUser = verifyData.users?.[0];
+      if (!verifiedGoogleUser?.email || verifiedGoogleUser.emailVerified !== true) {
+        res.status(401).json({ error: 'Verified Google email address is required' });
+        return;
+      }
+
+      const db = getDb();
+      const normalizedEmail = verifiedGoogleUser.email.trim().toLowerCase();
+      const isOwner = normalizedEmail === OWNER_ADMIN_EMAIL;
+      const clientIp = (req.headers['x-forwarded-for'] as string)?.split(',')[0]?.trim() || req.socket.remoteAddress || '127.0.0.1';
+      const clientDevice = (req.headers['user-agent'] as string) || 'Browser Client';
+
+      let user = db.users.find(u => u.email.toLowerCase() === normalizedEmail);
+      if (!user) {
+        const salt = bcrypt.genSaltSync(10);
+        const placeholderHash = bcrypt.hashSync(crypto.randomBytes(24).toString('hex'), salt);
+        user = {
+          id: `user_google_${Date.now()}`,
+          fullName: (verifiedGoogleUser.displayName || normalizedEmail.split('@')[0]).trim(),
+          email: normalizedEmail,
+          passwordHash: placeholderHash,
+          role: isOwner ? 'admin' : 'user',
+          isOwner,
+          status: 'active',
+          createdAt: new Date().toISOString(),
+          lastLogin: new Date().toISOString()
+        };
+        db.users.push(user);
+      } else {
+        if (user.status === 'suspended') {
+          res.status(403).json({ error: 'This account has been suspended by the administrator.' });
+          return;
+        }
+        user.lastLogin = new Date().toISOString();
+        if (isOwner) {
+          user.isOwner = true;
+          user.role = 'admin';
+        }
+        if (verifiedGoogleUser.displayName && (!user.fullName || user.fullName === 'User')) {
+          user.fullName = verifiedGoogleUser.displayName.trim();
+        }
+      }
+
+      if (!db.accountSecurity.loginHistory) db.accountSecurity.loginHistory = [];
+      db.accountSecurity.loginHistory.unshift({
+        id: `log_${Date.now()}`,
+        email: user.email,
+        ip: clientIp,
+        device: `Google Sign-In · ${clientDevice.substring(0, 64)}`,
+        status: 'success',
+        timestamp: new Date().toISOString()
+      });
+      if (db.accountSecurity.loginHistory.length > 100) {
+        db.accountSecurity.loginHistory = db.accountSecurity.loginHistory.slice(0, 100);
+      }
+      saveDb(db);
+
+      const tokenPayload: AuthTokenPayload = {
+        userId: user.id,
+        email: user.email,
+        role: user.role,
+        isOwner: user.isOwner,
+        fullName: user.fullName
+      };
+
+      const token = jwt.sign(tokenPayload, JWT_SECRET, { expiresIn: '7d' });
+
+      res.json({
+        message: 'Google authentication successful',
+        token,
+        user: {
+          id: user.id,
+          fullName: user.fullName,
+          email: user.email,
+          role: user.role,
+          isOwner: user.isOwner,
+          createdAt: user.createdAt,
+          lastLogin: user.lastLogin
+        }
+      });
+    } catch (err) {
+      console.error('Google auth error:', err);
+      res.status(500).json({ error: 'Server error verifying Google sign-in' });
+    }
+  });
+
   // Get current user profile and session info
   app.get('/api/auth/me', authenticateToken, (req: AuthenticatedRequest, res: Response): void => {
     const db = getDb();
